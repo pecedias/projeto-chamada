@@ -84,9 +84,9 @@ namespace Controller
         public void Excluir(Aula objEntrada)
         {
 
-            MySqlCommand cmd = new MySqlCommand("delete from Aula where idAula = @idAula");
+            MySqlCommand cmd = new MySqlCommand("delete from aula where idAula = @idAula");
 
-            cmd.Parameters.Add(new MySqlParameter("idAluno", objEntrada.idAula));
+            cmd.Parameters.Add(new MySqlParameter("idAula", objEntrada.idAula));
 
             Conexao c = new Conexao();
             c.Abrir();
@@ -101,15 +101,15 @@ namespace Controller
             MySqlCommand cmd = null;
 
             cmd = new MySqlCommand(@"
-                 select Aula.idAula,
-                        Aula.idProfessor,
-                        Aula.idTurma,
-                        Aula.Nome
-                        from Aula
-                        inner join Professor
-                        on Professor.idProfessor = Aula.idProfessor
-                        inner join Turma
-                        on Turma.idTurma = Aula.idTurma
+                 select aula.idAula,
+                        professor.Nome,
+                        turma.Nome,
+                        aula.Nome
+                        from aula
+                        inner join professor
+                        on professor.idProfessor = aula.idProfessor
+                        inner join turma
+                        on turma.idTurma = aula.idTurma
             ");
 
             Conexao c = new Conexao();
@@ -123,11 +123,16 @@ namespace Controller
             while (reader.Read())
             {
                 Aula aula = new Aula();
+                Professor professor = new Professor();
+                Turma turma = new Turma();
 
                 aula.idAula = reader.GetInt32(0);
-                aula.idProfessor.Nome = reader.GetString(1);
-                aula.idTurma.Nome = reader.GetString(2);
+                professor.Nome = reader.GetString(1);
+                turma.Nome = reader.GetString(2);
                 aula.Nome = reader.GetString(3);
+
+                aula.idProfessor = professor;
+                aula.idTurma = turma;
 
                 lstRetorno.Add(aula);
 

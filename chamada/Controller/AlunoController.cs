@@ -5,7 +5,7 @@ using Model;
 
 namespace Controller
 {
-    class AlunoController
+    public class AlunoController
     {
 
         public void Incluir(Aluno objEntrada)

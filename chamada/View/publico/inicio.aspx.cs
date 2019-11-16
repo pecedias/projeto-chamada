@@ -20,20 +20,20 @@ namespace View
             
         }
 
-        protected void btnOk_Click(object sender, EventArgs e)
+        public void btnOk_Click(object sender, EventArgs e)
         {
 
             try
             {
 
-                UsuarioController uc = new UsuarioController();
+                ProfessorController uc = new ProfessorController();
 
-                Usuario us = new Usuario();
+                Professor us = new Professor();
 
-                us.Cpf = txtCpf.Text;
+                us.Email = txtCpf.Text;
                 us.Senha = txtSenha.Text;
 
-                Usuario ul = uc.Logar(us);
+                Professor ul = uc.Logar(us);
 
                 // Cria Ticket para autenticação no sistema
                 FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket("  ", false, 15);
@@ -44,7 +44,7 @@ namespace View
                 // Adiciona o Ticket no cookie
                 Response.Cookies.Add(authCookie);
 
-                Session.Add("usuarioLogado", ul);
+                Session.Add("ProfessorLogado", ul);
 
                 Response.Redirect("/restrito/menu.aspx");
 

@@ -31,9 +31,9 @@ namespace Controller
                  @Estado,
                  @idUsuario)");
 
-            cmd.Parameters.Add(new MySqlParameter("Nome", objEntrada.nome));
-            cmd.Parameters.Add(new MySqlParameter("Estado", objEntrada.estado));
-            cmd.Parameters.Add(new MySqlParameter("idUsuario", objEntrada.usuario.idUsuario));
+            cmd.Parameters.Add(new MySqlParameter("Nome", objEntrada.Nome));
+            cmd.Parameters.Add(new MySqlParameter("Estado", objEntrada.idAula));
+            cmd.Parameters.Add(new MySqlParameter("idUsuario", objEntrada.idProfessor.idProfessor));
 
             Conexao c = new Conexao();
             c.Abrir();

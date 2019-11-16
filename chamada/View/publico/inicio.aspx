@@ -1,24 +1,58 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="inicio.aspx.cs" Inherits="View.inicio" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            Digite o CPF:
-            <asp:TextBox ID="txtCpf" runat="server" MaxLength="11"></asp:TextBox>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Login - Chamada</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="src/style.css" rel="stylesheet">
+  </head>
+<body class="text-center">
+    <form id="form1" class="form-signin" runat="server">
+        <div class="form-content-white">
+            <h1 class="h3 mb-3 font-weight-normal">Olá, faça seu login</h1>
+            Digite seu email:
+            <asp:TextBox ID="txtCpf" type="email" class="form-control" runat="server" MaxLength="100" required="true"></asp:TextBox>
             <br />
-            Digite a Senha:
-            <asp:TextBox ID="txtSenha" runat="server" MaxLength="45" TextMode="Password"></asp:TextBox>
+            Digite sua senha:
+            <asp:TextBox ID="txtSenha" class="form-control" runat="server" MaxLength="45" TextMode="Password" required="true"></asp:TextBox>
             <br />
-            <asp:Button ID="btnOk" runat="server" Text="OK" OnClick="btnOk_Click"/>
+            <asp:Button ID="btnOk"  class="btn btn-lg btn-primary btn-block" runat="server" Text="Logar" OnClick="btnOk_Click"/>
             <br />
             <asp:Label ID="lblMensagem" runat="server"></asp:Label>
         </div>
     </form>
 </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>

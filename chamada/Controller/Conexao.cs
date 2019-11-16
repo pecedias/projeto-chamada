@@ -11,7 +11,7 @@ namespace Controller
 
         public Conexao()
         {
-            myConn = new MySqlConnection("Server=localhost; Database=dbchamada; Uid=root; Pwd=1234;");
+            myConn = new MySqlConnection("Server=mysql.orbx.com.br; Database=orbx01; Uid=orbx01; Pwd=9QT5yVnU;");
         }
 
         public void Abrir()

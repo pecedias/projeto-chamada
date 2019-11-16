@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Model
 {
     [Serializable]
-    class Chamada
+    public class Chamada
     {
         private int idChamada { get; set; }
         private Aula idAula { get; set; }

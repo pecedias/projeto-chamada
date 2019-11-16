@@ -25,3 +25,30 @@ C:\Users\Usuario\Downloads\Exemplo Crud Completo\Aula06\Controller\obj\Debug\Con
 C:\Users\Usuario\Downloads\Exemplo Crud Completo\Aula06\Controller\obj\Debug\Controller.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Downloads\Exemplo Crud Completo\Aula06\Controller\obj\Debug\Controller.dll
 C:\Users\Usuario\Downloads\Exemplo Crud Completo\Aula06\Controller\obj\Debug\Controller.pdb
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Controller\obj\Debug\Controller.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Controller\obj\Debug\Controller.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Controller\obj\Debug\Controller.dll
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Controller\obj\Debug\Controller.pdb
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Controller\bin\Debug\Controller.dll
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Controller\bin\Debug\Controller.pdb
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Controller\bin\Debug\Model.dll
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Controller\bin\Debug\MySql.Data.dll
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Controller\bin\Debug\Google.Protobuf.dll
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Controller\bin\Debug\Renci.SshNet.dll
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Controller\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Controller\bin\Debug\Model.pdb
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Controller\bin\Debug\MySql.Data.xml
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Controller\obj\Debug\Controller.csproj.CopyComplete
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Controller\bin\Debug\Controller.dll
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Controller\bin\Debug\Controller.pdb
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Controller\bin\Debug\Model.dll
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Controller\bin\Debug\Google.Protobuf.dll
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Controller\bin\Debug\Renci.SshNet.dll
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Controller\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Controller\bin\Debug\Model.pdb
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Controller\bin\Debug\MySql.Data.xml
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Controller\obj\Debug\Controller.csprojAssemblyReference.cache
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Controller\obj\Debug\Controller.csproj.CoreCompileInputs.cache
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Controller\obj\Debug\Controller.csproj.CopyComplete
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Controller\obj\Debug\Controller.dll
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Controller\obj\Debug\Controller.pdb

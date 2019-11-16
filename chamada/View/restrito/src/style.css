@@ -1,0 +1,16 @@
+﻿body {
+    background-color: whitesmoke;
+}
+
+.d-md-block {
+    height: 100vh;
+    background-color: rgb(34,34,34);
+}
+
+a {
+    color: #D3D3D3;
+}
+
+a:hover{
+    color: white;
+}

@@ -15,3 +15,15 @@ C:\Users\Usuario\Downloads\Exemplo Crud Completo\Aula06\Model\obj\Debug\Model.cs
 C:\Users\Usuario\Downloads\Exemplo Crud Completo\Aula06\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Downloads\Exemplo Crud Completo\Aula06\Model\obj\Debug\Model.dll
 C:\Users\Usuario\Downloads\Exemplo Crud Completo\Aula06\Model\obj\Debug\Model.pdb
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Model\bin\Debug\Model.dll
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Model\bin\Debug\Model.pdb
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Model\obj\Debug\Model.dll
+C:\Users\Usuario\Desktop\projeto-chamada-master\chamada\Model\obj\Debug\Model.pdb
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Model\bin\Debug\Model.dll
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Model\bin\Debug\Model.pdb
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Model\obj\Debug\Model.dll
+C:\Users\Joao\Desktop\projeto-chamada-master\chamada\Model\obj\Debug\Model.pdb

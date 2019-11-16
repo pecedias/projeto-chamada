@@ -71,11 +71,9 @@
     <Content Include="Global.asax" />
     <Content Include="publico\erro.aspx" />
     <Content Include="publico\inicio.aspx" />
-    <Content Include="restrito\colaborador\dadosColaborador.aspx" />
-    <Content Include="restrito\colaborador\listaColaborador.aspx" />
+    <Content Include="publico\src\style.css" />
     <Content Include="restrito\menu.aspx" />
-    <Content Include="restrito\unidade\dadosUnidade.aspx" />
-    <Content Include="restrito\unidade\listaUnidade.aspx" />
+    <Content Include="restrito\src\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -99,20 +97,6 @@
     <Compile Include="publico\inicio.aspx.designer.cs">
       <DependentUpon>inicio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="restrito\colaborador\dadosColaborador.aspx.cs">
-      <DependentUpon>dadosColaborador.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="restrito\colaborador\dadosColaborador.aspx.designer.cs">
-      <DependentUpon>dadosColaborador.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="restrito\colaborador\listaColaborador.aspx.cs">
-      <DependentUpon>listaColaborador.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="restrito\colaborador\listaColaborador.aspx.designer.cs">
-      <DependentUpon>listaColaborador.aspx</DependentUpon>
-    </Compile>
     <Compile Include="restrito\menu.aspx.cs">
       <DependentUpon>menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -121,20 +105,6 @@
       <DependentUpon>menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="restrito\unidade\dadosUnidade.aspx.cs">
-      <DependentUpon>dadosUnidade.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="restrito\unidade\dadosUnidade.aspx.designer.cs">
-      <DependentUpon>dadosUnidade.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="restrito\unidade\listaUnidade.aspx.cs">
-      <DependentUpon>listaUnidade.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="restrito\unidade\listaUnidade.aspx.designer.cs">
-      <DependentUpon>listaUnidade.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

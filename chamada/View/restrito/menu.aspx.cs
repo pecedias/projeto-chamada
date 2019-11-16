@@ -15,7 +15,8 @@ namespace View
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           usuarioLogado = (Professor)Session["ProfessorLogado"];
+            profLabel.Text = usuarioLogado.Nome;
         }
     }
        

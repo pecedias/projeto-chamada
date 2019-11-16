@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="menu.aspx.cs" Inherits="View.menu" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Alunos.aspx.cs" Inherits="View.restrito.Alunos" %>
 
 <!doctype html>
 <html lang="en">
@@ -118,3 +117,4 @@
     </script>
   </body>
 </html>
+

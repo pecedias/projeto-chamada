@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="menu.aspx.cs" Inherits="View.menu" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Aulas.aspx.cs" Inherits="View.restrito.Aulas" %>
 
 <!doctype html>
 <html lang="en">
@@ -65,8 +64,18 @@
           </div>
         </nav>
           <div class="content">
-               <h1>Olá <asp:Label runat="server" ID="profLabel"></asp:Label>, Bem vindo ao Sistema de chamada</h1>
-               <img src="src/chamadaMiddle.png" />
+               <h1>Lista de Aulas</h1>
+               <form id="form1" runat="server">
+                   <asp:GridView ID="listaGrid" runat="server">
+                       <Columns>
+                           <asp:BoundField DataField="professorData" HeaderText="Professor" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:BoundField DataField="alunoData" HeaderText="Aluno" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:BoundField DataField="turmaData" HeaderText="Turma" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:ButtonField CommandName="alterar" ButtonType="Image" ImageUrl="~/publico/imagens/16alterar.png" HeaderText="Alterar" ItemStyle-Width="40px" ItemStyle-HorizontalAlign="Center"  />
+                           <asp:ButtonField CommandName="excluir" ButtonType="Image" ImageUrl="~/publico/imagens/16delete.png" HeaderText="Excluir" ItemStyle-Width="40px" ItemStyle-HorizontalAlign="Center" />
+                       </Columns>
+                   </asp:GridView>
+               </form>
           </div>
       </div>
     </div>

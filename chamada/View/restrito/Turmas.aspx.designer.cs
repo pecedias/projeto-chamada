@@ -7,10 +7,10 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace View {
+namespace View.restrito {
     
     
-    public partial class menu {
+    public partial class Turmas {
         
         /// <summary>
         /// Controle profLabel.

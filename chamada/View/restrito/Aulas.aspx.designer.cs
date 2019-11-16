@@ -7,18 +7,27 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace View {
+namespace View.restrito {
     
     
-    public partial class menu {
+    public partial class Aulas {
         
         /// <summary>
-        /// Controle profLabel.
+        /// Controle form1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label profLabel;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// Controle listaGrid.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView listaGrid;
     }
 }

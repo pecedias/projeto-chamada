@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="menu.aspx.cs" Inherits="View.menu" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Turmas.aspx.cs" Inherits="View.restrito.Turmas" %>
 
 <!doctype html>
 <html lang="en">

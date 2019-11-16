@@ -72,8 +72,12 @@
     <Content Include="publico\erro.aspx" />
     <Content Include="publico\inicio.aspx" />
     <Content Include="publico\src\style.css" />
+    <Content Include="restrito\Alunos.aspx" />
+    <Content Include="restrito\Aulas.aspx" />
     <Content Include="restrito\menu.aspx" />
+    <Content Include="restrito\src\chamadaMiddle.png" />
     <Content Include="restrito\src\style.css" />
+    <Content Include="restrito\Turmas.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +101,20 @@
     <Compile Include="publico\inicio.aspx.designer.cs">
       <DependentUpon>inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="restrito\Alunos.aspx.cs">
+      <DependentUpon>Alunos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="restrito\Alunos.aspx.designer.cs">
+      <DependentUpon>Alunos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="restrito\Aulas.aspx.cs">
+      <DependentUpon>Aulas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="restrito\Aulas.aspx.designer.cs">
+      <DependentUpon>Aulas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="restrito\menu.aspx.cs">
       <DependentUpon>menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -105,6 +123,13 @@
       <DependentUpon>menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="restrito\Turmas.aspx.cs">
+      <DependentUpon>Turmas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="restrito\Turmas.aspx.designer.cs">
+      <DependentUpon>Turmas.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

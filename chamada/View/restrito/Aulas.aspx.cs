@@ -11,44 +11,25 @@ namespace View.restrito
 {
     public partial class Aulas : System.Web.UI.Page
     {
+        Professor professor;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
                 Carregar();
+            professor = (Professor)Session["ProfessorLogado"];
+           
         }
 
         protected void listaGrid_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            switch (e.CommandName)
-            {
-                case "alterar":
-                    {
 
-                        int id = int.Parse(listaGrid.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text);
+               Aula a = new Aula();
+               a.idAula = int.Parse(listaGrid.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text);
 
-                        Response.Redirect("dadosUnidade.aspx?itemSel=" + id);
-
-                    }
-                    break;
-
-                case "excluir":
-                    {
-
-                        Aula a = new Aula();
-                        a.idAula = int.Parse(listaGrid.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text);
-
-                        new AulaController().Excluir(a);
-                        Carregar();
-
-                    }
-                    break;
-            }
+              new AulaController().Excluir(a);
+              Carregar();
         }
 
-        protected void btnVoltar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("../menu.aspx");
-        }
 
         #region Métodos
 
@@ -59,6 +40,23 @@ namespace View.restrito
             listaGrid.DataSource = aulas;
 
             listaGrid.DataBind();
+        }
+
+        protected void btnModal_Click(object sender, EventArgs e)
+        {
+            profNome.Text = professor.Nome;
+            TurmaController t = new TurmaController();
+            foreach (Turma turma in t.Listar())
+            {
+                dropDownTurmas.Items.Add(turma.Nome);
+            }
+
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
+        }
+
+        protected void btnSalvar_Click(object sender, EventArgs e)
+        {
+            //salvar dados
         }
     }
 }

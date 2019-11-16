@@ -65,3 +65,16 @@ C:\Users\pc_di\Desktop\projeto-chamada\chamada\Controller\obj\Debug\Controller.c
 C:\Users\pc_di\Desktop\projeto-chamada\chamada\Controller\obj\Debug\Controller.csproj.CopyComplete
 C:\Users\pc_di\Desktop\projeto-chamada\chamada\Controller\obj\Debug\Controller.dll
 C:\Users\pc_di\Desktop\projeto-chamada\chamada\Controller\obj\Debug\Controller.pdb
+C:\Users\Joao\Documents\GitHub\projeto-chamada\chamada\Controller\bin\Debug\Controller.dll
+C:\Users\Joao\Documents\GitHub\projeto-chamada\chamada\Controller\bin\Debug\Controller.pdb
+C:\Users\Joao\Documents\GitHub\projeto-chamada\chamada\Controller\bin\Debug\Model.dll
+C:\Users\Joao\Documents\GitHub\projeto-chamada\chamada\Controller\bin\Debug\Google.Protobuf.dll
+C:\Users\Joao\Documents\GitHub\projeto-chamada\chamada\Controller\bin\Debug\Renci.SshNet.dll
+C:\Users\Joao\Documents\GitHub\projeto-chamada\chamada\Controller\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Joao\Documents\GitHub\projeto-chamada\chamada\Controller\bin\Debug\Model.pdb
+C:\Users\Joao\Documents\GitHub\projeto-chamada\chamada\Controller\bin\Debug\MySql.Data.xml
+C:\Users\Joao\Documents\GitHub\projeto-chamada\chamada\Controller\obj\Debug\Controller.csprojAssemblyReference.cache
+C:\Users\Joao\Documents\GitHub\projeto-chamada\chamada\Controller\obj\Debug\Controller.csproj.CoreCompileInputs.cache
+C:\Users\Joao\Documents\GitHub\projeto-chamada\chamada\Controller\obj\Debug\Controller.csproj.CopyComplete
+C:\Users\Joao\Documents\GitHub\projeto-chamada\chamada\Controller\obj\Debug\Controller.dll
+C:\Users\Joao\Documents\GitHub\projeto-chamada\chamada\Controller\obj\Debug\Controller.pdb

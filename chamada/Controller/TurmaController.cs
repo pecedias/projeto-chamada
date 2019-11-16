@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace Controller
 {
-    class TurmaController
+    public class TurmaController
     {
         public void Incluir(Turma objEntrada)
         {
@@ -70,14 +70,14 @@ namespace Controller
 
         }
 
-        public List<Turma> Listar(Turma objEntrada)
+        public List<Turma> Listar()
         {
 
             MySqlCommand cmd = null;
 
             cmd = new MySqlCommand(@"
-                 select Turma.idTurma,      
-                        Turma.Nome
+                 select turma.idTurma,      
+                        turma.Nome from turma;
             ");
 
             Conexao c = new Conexao();

@@ -9,10 +9,10 @@ namespace Model
     [Serializable]
     public class Chamada
     {
-        private int idChamada { get; set; }
-        private Aula idAula { get; set; }
-        private Aluno idAluno { get; set; }
-        private int Presenca { get; set; }
+        public int idChamada { get; set; }
+        public Aula idAula { get; set; }
+        public Aluno idAluno { get; set; }
+        public int Presenca { get; set; }
 
         public Chamada()
         {

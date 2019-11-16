@@ -13,7 +13,7 @@ namespace Controller
 
             if (String.IsNullOrEmpty(objEntrada.Nome))
             {
-                throw new ConsistenciaException("Por favor, digite o nome da unidade.");
+                throw new ConsistenciaException("Por favor, digite o nome do aluno.");
             }
 
             if (objEntrada.Matricula.Equals(null))
@@ -45,7 +45,7 @@ namespace Controller
 
             if (String.IsNullOrEmpty(objEntrada.Nome))
             {
-                throw new ConsistenciaException("Por favor, digite o nome da unidade.");
+                throw new ConsistenciaException("Por favor, digite o nome do aluno.");
             }
 
             if (objEntrada.Matricula.Equals(null))
@@ -68,6 +68,7 @@ namespace Controller
             cmd.Parameters.Add(new MySqlParameter("Nome", objEntrada.Nome));
             cmd.Parameters.Add(new MySqlParameter("Matricula", objEntrada.Matricula));
             cmd.Parameters.Add(new MySqlParameter("idTurma", objEntrada.idTurma.idTurma));
+            cmd.Parameters.Add(new MySqlParameter("idAluno", objEntrada.idAluno));
 
             Conexao c = new Conexao();
             c.Abrir();
@@ -95,32 +96,15 @@ namespace Controller
 
             MySqlCommand cmd = null;
 
-            if (objEntrada.idAluno != 0)
-            {
-
-                cmd = new MySqlCommand(@"
-                 select Aluno.idAluno,
-                        Aluno.Nome,   
-                        Aluno.Matricula,
-                        Aluno.idTurma
-                   from Aluno
-                  inner join Turma on Turma.idTurma = Turma.idTurma
-                  where Aluno.idAluno = @idAluno");
-
-                cmd.Parameters.Add(new MySqlParameter("idAluno", objEntrada.idAluno));
-
-            }
-            else
-            {
                 cmd = new MySqlCommand(@"
                  select Aluno.idAluno,
                         Aluno.Nome,
                         Aluno.Matricula,
                         Aluno.idTurma
                    from Aluno
-                  inner join Turma on Turma.idTurma = Turma.idTurma");
-            }
-
+                   inner join Turma 
+                   on Turma.idTurma = Aluno.idTurma");
+           
             Conexao c = new Conexao();
 
             c.Abrir();
@@ -134,8 +118,10 @@ namespace Controller
                 Aluno aluno = new Aluno();
 
                 aluno.idAluno = reader.GetInt32(0);
-                aluno.Matricula = reader.GetInt32(1);
-                aluno.Nome = reader.GetString(2);
+                aluno.Nome = reader.GetString(1);
+                aluno.Matricula = reader.GetInt32(2);
+                aluno.idTurma.Nome = reader.GetString(3);
+                
 
                 lstRetorno.Add(aluno);
 

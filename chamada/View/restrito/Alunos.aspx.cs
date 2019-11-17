@@ -61,7 +61,7 @@ namespace View.restrito
         protected void btnModal_Click(object sender, EventArgs e)
         {
             TurmaController t = new TurmaController();
-            foreach (Turma turma in t.Listar())
+            foreach (Turma turma in t.Listar(new Turma()))
             {
                 ListItem lst = new ListItem(turma.Nome, turma.idTurma.ToString());
                 dropDownTurmas.Items.Add(lst);

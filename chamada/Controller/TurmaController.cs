@@ -20,10 +20,8 @@ namespace Controller
 
             MySqlCommand cmd = new MySqlCommand(@"insert into turma values(
                  default,
-                 @Nome,
-            ");
+                 @Nome)");
 
-            cmd.Parameters.Add(new MySqlParameter("idAula", objEntrada.idTurma));
             cmd.Parameters.Add(new MySqlParameter("Nome", objEntrada.Nome));
 
             Conexao c = new Conexao();
@@ -46,8 +44,8 @@ namespace Controller
                where idTurma = @idTurma
              ");
 
-            cmd.Parameters.Add(new MySqlParameter("idTurma", objEntrada.idTurma));
             cmd.Parameters.Add(new MySqlParameter("Nome", objEntrada.Nome));
+            cmd.Parameters.Add(new MySqlParameter("idTurma", objEntrada.idTurma));
 
             Conexao c = new Conexao();
             c.Abrir();
@@ -70,7 +68,7 @@ namespace Controller
 
         }
 
-        public List<Turma> Listar()
+        public List<Turma> Listar(Turma objEntrada)
         {
 
             MySqlCommand cmd = null;

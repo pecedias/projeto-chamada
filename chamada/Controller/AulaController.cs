@@ -16,27 +16,21 @@ namespace Controller
                 throw new ConsistenciaException("Por favor, digite o nome da Aula.");
             }
 
-            if (objEntrada.idTurma.Equals(null))
+            if (objEntrada.idTurma.idTurma.Equals(null))
             {
                 throw new ConsistenciaException("Por favor, informe a Turma");
             }
 
-            if (objEntrada.idProfessor.Equals(null))
-            {
-                throw new ConsistenciaException("Por favor, informa um Professor");
-            }
-
-            MySqlCommand cmd = new MySqlCommand(@"insert into Aula values(
+            MySqlCommand cmd = new MySqlCommand(@"insert into aula values(
                  default,
-                 @Nome,
+                 @idProfessor,
                  @idTurma,
-                 @idProfessor)");
+                 @Nome)");
 
-            cmd.Parameters.Add(new MySqlParameter("idAula", objEntrada.idAula));
-            cmd.Parameters.Add(new MySqlParameter("Nome", objEntrada.Nome));
-            cmd.Parameters.Add(new MySqlParameter("Estado", objEntrada.idTurma.idTurma));
             cmd.Parameters.Add(new MySqlParameter("idProfessor", objEntrada.idProfessor.idProfessor));
-
+            cmd.Parameters.Add(new MySqlParameter("Nome", objEntrada.Nome));
+            cmd.Parameters.Add(new MySqlParameter("idTurma", objEntrada.idTurma.idTurma));
+            
             Conexao c = new Conexao();
             c.Abrir();
             c.Executar(cmd);
@@ -57,22 +51,18 @@ namespace Controller
                 throw new ConsistenciaException("Por favor, informe a Turma");
             }
 
-            if (objEntrada.idProfessor.Equals(null))
-            {
-                throw new ConsistenciaException("Por favor, informa um Professor");
-            }
-
             MySqlCommand cmd = new MySqlCommand(@"update aula
-                 set Nome = @Nome,
+                 set 
+                     idProfessor = @idProfessor        
                      idTurma = @idTurma,
-                     idProfessor = @idProfessor
+                     Nome = @Nome,
                where idAula = @idAula
              ");
 
-            cmd.Parameters.Add(new MySqlParameter("idAula", objEntrada.idAula));
-            cmd.Parameters.Add(new MySqlParameter("Nome", objEntrada.Nome));
-            cmd.Parameters.Add(new MySqlParameter("Estado", objEntrada.idTurma.idTurma));
             cmd.Parameters.Add(new MySqlParameter("idProfessor", objEntrada.idProfessor.idProfessor));
+            cmd.Parameters.Add(new MySqlParameter("idTurma", objEntrada.idTurma.idTurma));
+            cmd.Parameters.Add(new MySqlParameter("Nome", objEntrada.Nome));
+            cmd.Parameters.Add(new MySqlParameter("idAula", objEntrada.idAula));
 
             Conexao c = new Conexao();
             c.Abrir();

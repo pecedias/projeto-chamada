@@ -11,6 +11,7 @@ namespace View.restrito
 {
     public partial class Turmas : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -20,14 +21,16 @@ namespace View.restrito
 
         protected void listaGridTurmas_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+
             switch (e.CommandName)
             {
                 case "alterar":
                     {
 
                         int id = int.Parse(listaGridTurmas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text);
-                        txtNome.Text = listaGridTurmas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[1].Text;
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modalEditar').modal('show'); });</script>", false);
+                        txtNomeTurma.Text = listaGridTurmas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[1].Text;
+
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
 
                     }
                     break;
@@ -44,6 +47,16 @@ namespace View.restrito
                     }
                     break;
             }
+            Carregar();
+        }
+
+        protected void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+            if (Request.QueryString["itemSel"] == null)
+                Incluir();
+            else
+                Alterar();
         }
 
 
@@ -51,24 +64,70 @@ namespace View.restrito
 
         public void Carregar()
         {
-            List<Turma> turmas = new TurmaController().Listar();
+            List<Turma> turmas = new TurmaController().Listar(new Turma());
 
             listaGridTurmas.DataSource = turmas;
 
             listaGridTurmas.DataBind();
         }
 
-        protected void btnSalvar_Click(object sender, EventArgs e)
-        {
-            String nome = txtNomeTurma.Text;
-            //salvar nome da turma
-        }
-
         protected void btnModal_Click(object sender, EventArgs e)
         {
 
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
+        }
 
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modalAdicionar').modal('show'); });</script>", false);
+        public void Incluir()
+        {
+            try
+            {
+
+                Turma turma = new Turma();
+
+                turma.Nome = txtNomeTurma.Text;
+
+
+              //  turma.idTurma = txtNomeTurma;
+
+                new TurmaController().Incluir(turma);
+
+                Response.Redirect("Turmas.aspx");
+
+            }
+            catch (ConsistenciaException ex)
+            {
+                ExibirMensagemAlert(ex.Mensagem);
+            }
+        }
+
+        public void Alterar()
+        {
+
+            try
+            {
+
+                Turma turma = (Turma)ViewState["itemSel"];
+
+
+                turma.Nome = txtNomeTurma.Text;
+
+                //turma.idTurma = turma;
+
+                new TurmaController().Atualizar(turma);
+
+                Response.Redirect("Turmas.aspx");
+
+            }
+            catch (ConsistenciaException ex)
+            {
+                ExibirMensagemAlert(ex.Mensagem);
+            }
+
+        }
+
+        private void ExibirMensagemAlert(string mensagem)
+        {
+            throw new NotImplementedException();
         }
     }
 }

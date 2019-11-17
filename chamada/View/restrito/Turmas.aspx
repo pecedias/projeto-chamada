@@ -73,12 +73,12 @@
                <h1>Lista de Turmas</h1>
                <form id="form1" runat="server">
                    <asp:Button  ID="btnModal" runat="server" CssClass="btn btn-primary" OnClick="btnModal_Click" Text="Adicionar nova turma"/>
-                      <!--- Modal Adicionar -->
-                    <div class="modal" id="modalAdicionar" tabindex="-1" role="dialog">
+                      <!--- Modal Editar -->
+                    <div class="modal" id="modal" tabindex="-1" role="dialog">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title">Nova Turma</h5>
+                                <h5 class="modal-title">Nova Aula</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
@@ -93,34 +93,13 @@
                             </div>
                           </div>
                       </div>
-                      <!--- Modal Editar -->
-                    <div class="modal" id="modalEditar" tabindex="-1" role="dialog">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title">Editando <asp:Label ID="editLabel"></asp:Label></h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-                                <p>Nome: <asp:TextBox ID="txtNome" runat="server" MaxLength="120"></asp:TextBox></p>
-                                <p>Turma: <asp:DropDownList ID="turmaDropDown"></asp:DropDownList></p>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                <button type="button" class="btn btn-primary">Salvar mudanças</button>
-                              </div>
-                            </div>
-                          </div>
-                      </div>
                    <!-- Lista -->
                    <asp:GridView ID="listaGridTurmas" runat="server"
                      CssClass="table table-dark m-1"
                     AutoGenerateColumns="false" OnRowCommand="listaGridTurmas_RowCommand">
                        <Columns>
                            <asp:BoundField DataField="idTurma" HeaderText="ID Turma" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
-                           <asp:BoundField DataField="Nome" HeaderText="Nome Turma" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:BoundField DataField="Nome" HeaderText="Nome" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
                            <asp:ButtonField CommandName="alterar" ButtonType="Button" ControlStyle-CssClass="btn btn-primary" Text="Alterar" HeaderText="Alterar" ItemStyle-Width="40px" ItemStyle-HorizontalAlign="Center"  />
                            <asp:ButtonField CommandName="excluir" ButtonType="Button" Text="Deletar" ControlStyle-CssClass="btn btn-danger" HeaderText="Excluir" ItemStyle-Width="40px" ItemStyle-HorizontalAlign="Center" />
                        </Columns>

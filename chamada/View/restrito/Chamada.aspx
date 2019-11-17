@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Alunos.aspx.cs" Inherits="View.restrito.Alunos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Chamada.aspx.cs" Inherits="View.restrito.Chamada" %>
 
 <!doctype html>
 <html lang="en">
@@ -35,7 +35,7 @@
       <div class="row">
         <nav class="col-md-2 d-none d-md-block sidebar">
           <div class="sidebar-sticky">
-             <ul class="nav flex-column">
+            <ul class="nav flex-column">
               <li class="nav-item">
                 <a class="nav-link active" href="menu.aspx">
                   <span data-feather="home"></span>
@@ -70,31 +70,8 @@
           </div>
         </nav>
           <div class="content">
-               <h1>Lista de Alunos</h1>
+               <h1>Lista de Presença</h1>
                <form id="form1" runat="server">
-                   <asp:Button  ID="btnModal" runat="server" CssClass="btn btn-primary" OnClick="btnModal_Click" Text="Novo Aluno(a)"/>
-                      <!--- Modal Adicionar -->
-                    <div class="modal" id="modalAdicionar" tabindex="-1" role="dialog">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title">Novo Aluno(a)</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-                                <p>Nome: <asp:TextBox ID="txtNomeAluno" runat="server" MaxLength="120"></asp:TextBox></p>
-                                <p>Matricula: <asp:TextBox ID="txtMatricula" runat="server" MaxLength="120"></asp:TextBox></p>
-                                <p>Turma: <asp:DropDownList ID="dropDownTurmas" CssClass="btn btn-primary dropdown-toggle" runat="server"></asp:DropDownList></p>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                <asp:Button  ID="btnSalvar" runat="server" CssClass="btn btn-primary" OnClick="btnSalvar_Click" Text="Salvar mudanças"/>
-                              </div>
-                            </div>
-                          </div>
-                      </div>
                       <!--- Modal Editar -->
                     <div class="modal" id="modal" tabindex="-1" role="dialog">
                           <div class="modal-dialog" role="document">
@@ -106,27 +83,44 @@
                                 </button>
                               </div>
                               <div class="modal-body">
-                                <p>Nome: <asp:TextBox ID="txtNome" runat="server" MaxLength="120"></asp:TextBox></p>
-                                <p>Turma: <asp:DropDownList ID="turmaDropDown"></asp:DropDownList></p>
+                                <p>idChamada: <asp:TextBox ID="txtEditIdChamada" runat="server" Enabled="false" MaxLength="120"></asp:TextBox></p>
+                                <p>idAluno: <asp:TextBox ID="txtEditIdAluno" runat="server" Enabled="false" MaxLength="120"></asp:TextBox></p>
+                                <p>Presenca: <asp:DropDownList ID="dropDownPresenca" CssClass="btn btn-primary dropdown-toggle" runat="server"></asp:DropDownList></p>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                               <asp:Button  ID="btnUpdate" runat="server" CssClass="btn btn-primary" OnClick="btnUpdate_Click" Text="Salvar mudanças"/>
+                                <button type="button" class="btn btn-primary">Salvar mudanças</button>
                               </div>
                             </div>
                           </div>
                       </div>
                    <!-- Lista -->
-                   <asp:GridView ID="listaGridAlunos" runat="server"
+                   <asp:GridView ID="listaGridChamadaPresenca" runat="server"
                      CssClass="table table-dark m-1"
-                    AutoGenerateColumns="false" OnRowCommand="listaGridAlunos_RowCommand">
+                    AutoGenerateColumns="false" OnRowCommand="listaGridChamadaPresenca_RowCommand">
                        <Columns>
-                           <asp:BoundField DataField="idAluno" HeaderText="ID Aluno" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
-                           <asp:BoundField DataField="Nome" HeaderText="Nome" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
-                           <asp:BoundField DataField="Matricula" HeaderText="Matricula" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
-                           <asp:BoundField DataField="idTurma.Nome" HeaderText="Nome Turma" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:BoundField DataField="idChamada" HeaderText="ID Turma" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:BoundField DataField="idAluno" HeaderText="Nome Aluno" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:BoundField DataField="presenca" HeaderText="Presença" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:BoundField DataField="data" HeaderText="Data" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:BoundField DataField="hora" HeaderText="Hora" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
                            <asp:ButtonField CommandName="alterar" ButtonType="Button" ControlStyle-CssClass="btn btn-primary" Text="Alterar" HeaderText="Alterar" ItemStyle-Width="40px" ItemStyle-HorizontalAlign="Center"  />
-                           <asp:ButtonField CommandName="excluir" ButtonType="Button" Text="Deletar" ControlStyle-CssClass="btn btn-danger" HeaderText="Excluir" ItemStyle-Width="40px" ItemStyle-HorizontalAlign="Center" />
+                       </Columns>
+                   </asp:GridView>
+                  <div>
+                       <h1>Alunos com falta</h1>
+                  </div>
+                    <!-- Lista -->
+                   <asp:GridView ID="listaGridChamadaFaltas" runat="server"
+                     CssClass="table table-dark m-1"
+                    AutoGenerateColumns="false" OnRowCommand="listaGridChamadaFaltas_RowCommand">
+                       <Columns>
+                           <asp:BoundField DataField="idChamadaF" HeaderText="ID Turma" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:BoundField DataField="idAlunoF" HeaderText="Nome Aluno" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:BoundField DataField="presencaF" HeaderText="Presença" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:BoundField DataField="dataF" HeaderText="Data" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:BoundField DataField="horaF" HeaderText="Hora" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:ButtonField CommandName="alterar" ButtonType="Button" ControlStyle-CssClass="btn btn-primary" Text="Alterar" HeaderText="Alterar" ItemStyle-Width="40px" ItemStyle-HorizontalAlign="Center"  />
                        </Columns>
                    </asp:GridView>
                    <asp:ScriptManager runat="server"></asp:ScriptManager>

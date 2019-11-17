@@ -27,7 +27,7 @@ namespace View.restrito
 
                         int id = int.Parse(listaGridTurmas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text);
                         txtNome.Text = listaGridTurmas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[1].Text;
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modalEditar').modal('show'); });</script>", false);
 
                     }
                     break;
@@ -51,11 +51,24 @@ namespace View.restrito
 
         public void Carregar()
         {
-            List<Turma> turmas = new TurmaController().Listar(new Turma());
+            List<Turma> turmas = new TurmaController().Listar();
 
             listaGridTurmas.DataSource = turmas;
 
             listaGridTurmas.DataBind();
+        }
+
+        protected void btnSalvar_Click(object sender, EventArgs e)
+        {
+            String nome = txtNomeTurma.Text;
+            //salvar nome da turma
+        }
+
+        protected void btnModal_Click(object sender, EventArgs e)
+        {
+
+
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modalAdicionar').modal('show'); });</script>", false);
         }
     }
 }

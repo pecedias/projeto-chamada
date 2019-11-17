@@ -66,10 +66,11 @@ namespace View.restrito
         {
             profNome.Text = professor.Nome;
             TurmaController t = new TurmaController();
-           // foreach (Turma turma in t.Listar())
-           // {
-            //    dropDownTurmas.Items.Add(turma.Nome);
-          //  }
+            foreach (Turma turma in t.Listar())
+            {
+                ListItem lst = new ListItem(turma.Nome, turma.idTurma.ToString());
+                dropDownTurmas.Items.Add(lst);
+            }
 
             ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
         }
@@ -77,6 +78,9 @@ namespace View.restrito
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
             //salvar dados
+            int idTurma = int.Parse( dropDownTurmas.SelectedValue.ToString());
+            int idProfessor = professor.idProfessor;
+
         }
     }
 }

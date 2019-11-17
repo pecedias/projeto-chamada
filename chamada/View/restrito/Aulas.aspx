@@ -37,7 +37,7 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link active" href="menu.aspx">
                   <span data-feather="home"></span>
                   Inicio <span class="sr-only">(current)</span>
                 </a>
@@ -58,6 +58,12 @@
                 <a class="nav-link" href="Alunos.aspx">
                   <span data-feather="users"></span>
                   Alunos
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Chamada.aspx">
+                  <span data-feather="star"></span>
+                  Chamada
                 </a>
               </li>
             </ul>

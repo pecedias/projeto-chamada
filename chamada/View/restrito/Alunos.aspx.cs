@@ -57,6 +57,29 @@ namespace View.restrito
 
             listaGridAlunos.DataBind();
         }
+
+        protected void btnModal_Click(object sender, EventArgs e)
+        {
+            TurmaController t = new TurmaController();
+            foreach (Turma turma in t.Listar())
+            {
+                ListItem lst = new ListItem(turma.Nome, turma.idTurma.ToString());
+                dropDownTurmas.Items.Add(lst);
+            }
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modalAdicionar').modal('show'); });</script>", false);
+        }
+
+        protected void btnSalvar_Click(object sender, EventArgs e)
+        {
+            //salvar novo aluno;
+            int idTurma = int.Parse(dropDownTurmas.SelectedValue.ToString());
+            String nome = txtNomeAluno.Text;
+        }
+
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            //update Aluno;
+        }
     }
 }
 #endregion

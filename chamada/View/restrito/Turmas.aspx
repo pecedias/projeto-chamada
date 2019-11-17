@@ -37,7 +37,7 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link active" href="menu.aspx">
                   <span data-feather="home"></span>
                   Inicio <span class="sr-only">(current)</span>
                 </a>
@@ -60,14 +60,41 @@
                   Alunos
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Chamada.aspx">
+                  <span data-feather="star"></span>
+                  Chamada
+                </a>
+              </li>
             </ul>
           </div>
         </nav>
           <div class="content">
                <h1>Lista de Turmas</h1>
                <form id="form1" runat="server">
+                   <asp:Button  ID="btnModal" runat="server" CssClass="btn btn-primary" OnClick="btnModal_Click" Text="Adicionar nova turma"/>
+                      <!--- Modal Adicionar -->
+                    <div class="modal" id="modalAdicionar" tabindex="-1" role="dialog">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title">Nova Turma</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <p>Nome: <asp:TextBox ID="txtNomeTurma" runat="server" MaxLength="120"></asp:TextBox></p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                <asp:Button  ID="btnSalvar" runat="server" CssClass="btn btn-primary" OnClick="btnSalvar_Click" Text="Salvar mudanças"/>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
                       <!--- Modal Editar -->
-                    <div class="modal" id="modal" tabindex="-1" role="dialog">
+                    <div class="modal" id="modalEditar" tabindex="-1" role="dialog">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header">

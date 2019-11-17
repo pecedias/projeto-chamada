@@ -70,7 +70,7 @@ namespace Controller
 
         }
 
-        public List<Turma> Listar(Turma objEntrada)
+        public List<Turma> Listar()
         {
 
             MySqlCommand cmd = null;

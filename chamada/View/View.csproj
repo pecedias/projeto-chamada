@@ -74,6 +74,7 @@
     <Content Include="publico\src\style.css" />
     <Content Include="restrito\Alunos.aspx" />
     <Content Include="restrito\Aulas.aspx" />
+    <Content Include="restrito\Chamada.aspx" />
     <Content Include="restrito\menu.aspx" />
     <Content Include="restrito\src\chamadaMiddle.png" />
     <Content Include="restrito\src\style.css" />
@@ -114,6 +115,13 @@
     </Compile>
     <Compile Include="restrito\Aulas.aspx.designer.cs">
       <DependentUpon>Aulas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="restrito\Chamada.aspx.cs">
+      <DependentUpon>Chamada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="restrito\Chamada.aspx.designer.cs">
+      <DependentUpon>Chamada.aspx</DependentUpon>
     </Compile>
     <Compile Include="restrito\menu.aspx.cs">
       <DependentUpon>menu.aspx</DependentUpon>

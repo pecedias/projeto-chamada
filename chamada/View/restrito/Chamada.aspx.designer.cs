@@ -10,7 +10,7 @@
 namespace View.restrito {
     
     
-    public partial class Turmas {
+    public partial class Chamada {
         
         /// <summary>
         /// Controle form1.
@@ -22,48 +22,48 @@ namespace View.restrito {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controle btnModal.
+        /// Controle txtEditIdChamada.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModal;
+        protected global::System.Web.UI.WebControls.TextBox txtEditIdChamada;
         
         /// <summary>
-        /// Controle txtNomeTurma.
+        /// Controle txtEditIdAluno.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomeTurma;
+        protected global::System.Web.UI.WebControls.TextBox txtEditIdAluno;
         
         /// <summary>
-        /// Controle btnSalvar.
+        /// Controle dropDownPresenca.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalvar;
+        protected global::System.Web.UI.WebControls.DropDownList dropDownPresenca;
         
         /// <summary>
-        /// Controle txtNome.
+        /// Controle listaGridChamadaPresenca.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNome;
+        protected global::System.Web.UI.WebControls.GridView listaGridChamadaPresenca;
         
         /// <summary>
-        /// Controle listaGridTurmas.
+        /// Controle listaGridChamadaFaltas.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView listaGridTurmas;
+        protected global::System.Web.UI.WebControls.GridView listaGridChamadaFaltas;
     }
 }

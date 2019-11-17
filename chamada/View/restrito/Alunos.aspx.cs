@@ -18,15 +18,15 @@ namespace View.restrito
 
         }
 
-        protected void listaGrid_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void listaGridAlunos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             switch (e.CommandName)
             {
                 case "alterar":
                     {
 
-                        int id = int.Parse(listaGrid.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text);
-                        txtNome.Text = listaGrid.Rows[int.Parse(e.CommandArgument.ToString())].Cells[3].Text;
+                        int id = int.Parse(listaGridAlunos.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text);
+                        txtNome.Text = listaGridAlunos.Rows[int.Parse(e.CommandArgument.ToString())].Cells[1].Text;
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
 
                     }
@@ -35,10 +35,10 @@ namespace View.restrito
                 case "excluir":
                     {
 
-                        Aula a = new Aula();
-                        a.idAula = int.Parse(listaGrid.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text);
+                        Aluno aluno = new Aluno();
+                        aluno.idAluno = int.Parse(listaGridAlunos.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text);
 
-                        new AulaController().Excluir(a);
+                        new AlunoController().Excluir(aluno);
                         Carregar();
 
                     }
@@ -51,11 +51,11 @@ namespace View.restrito
 
         public void Carregar()
         {
-            List<Aula> aulas = new AulaController().Listar(new Aula());
+            List<Aluno> alunos = new AlunoController().Listar(new Aluno());
 
-            listaGrid.DataSource = aulas;
+            listaGridAlunos.DataSource = alunos;
 
-            listaGrid.DataBind();
+            listaGridAlunos.DataBind();
         }
     }
 }

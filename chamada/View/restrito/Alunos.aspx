@@ -88,14 +88,14 @@
                           </div>
                       </div>
                    <!-- Lista -->
-                   <asp:GridView ID="listaGrid" runat="server"
+                   <asp:GridView ID="listaGridAlunos" runat="server"
                      CssClass="table table-dark m-1"
-                    AutoGenerateColumns="false" OnRowCommand="listaGrid_RowCommand">
+                    AutoGenerateColumns="false" OnRowCommand="listaGridAlunos_RowCommand">
                        <Columns>
-                           <asp:BoundField DataField="idAula" HeaderText="ID Aula" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
-                           <asp:BoundField DataField="idProfessor.Nome" HeaderText="Professor" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
-                           <asp:BoundField DataField="idTurma.Nome" HeaderText="Turma" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
-                           <asp:BoundField DataField="Nome" HeaderText="Aula" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:BoundField DataField="idAluno" HeaderText="ID Aluno" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:BoundField DataField="Nome" HeaderText="Nome" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:BoundField DataField="Matricula" HeaderText="Matricula" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:BoundField DataField="idTurma.Nome" HeaderText="Nome Turma" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
                            <asp:ButtonField CommandName="alterar" ButtonType="Button" ControlStyle-CssClass="btn btn-primary" Text="Alterar" HeaderText="Alterar" ItemStyle-Width="40px" ItemStyle-HorizontalAlign="Center"  />
                            <asp:ButtonField CommandName="excluir" ButtonType="Button" Text="Deletar" ControlStyle-CssClass="btn btn-danger" HeaderText="Excluir" ItemStyle-Width="40px" ItemStyle-HorizontalAlign="Center" />
                        </Columns>

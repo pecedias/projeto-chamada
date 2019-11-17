@@ -58,7 +58,7 @@ namespace Controller
                 throw new ConsistenciaException("Por favor, inserir uma turma");
             }
 
-            MySqlCommand cmd = new MySqlCommand(@"update Aluno
+            MySqlCommand cmd = new MySqlCommand(@"update aluno
                  set Nome = @Nome,
                      Matricula = @Matricula,
                      idTurma = @idTurma
@@ -80,7 +80,7 @@ namespace Controller
         public void Excluir(Aluno objEntrada)
         {
 
-            MySqlCommand cmd = new MySqlCommand("delete from Aluno where idAluno = @idAluno");
+            MySqlCommand cmd = new MySqlCommand("delete from aluno where idAluno = @idAluno");
 
             cmd.Parameters.Add(new MySqlParameter("idAluno", objEntrada.idAluno));
 
@@ -97,13 +97,13 @@ namespace Controller
             MySqlCommand cmd = null;
 
                 cmd = new MySqlCommand(@"
-                 select Aluno.idAluno,
-                        Aluno.Nome,
-                        Aluno.Matricula,
-                        Aluno.idTurma
-                   from Aluno
-                   inner join Turma 
-                   on Turma.idTurma = Aluno.idTurma");
+                 select aluno.idAluno,
+                        aluno.Nome,
+                        aluno.Matricula,
+                        turma.Nome
+                   from aluno
+                   inner join turma 
+                   on turma.idTurma = aluno.idTurma");
            
             Conexao c = new Conexao();
 
@@ -116,12 +116,14 @@ namespace Controller
             while (reader.Read())
             {
                 Aluno aluno = new Aluno();
+                Turma turma = new Turma();
 
                 aluno.idAluno = reader.GetInt32(0);
                 aluno.Nome = reader.GetString(1);
                 aluno.Matricula = reader.GetInt32(2);
-                aluno.idTurma.Nome = reader.GetString(3);
-                
+                turma.Nome = reader.GetString(3);
+
+                aluno.idTurma = turma;
 
                 lstRetorno.Add(aluno);
 

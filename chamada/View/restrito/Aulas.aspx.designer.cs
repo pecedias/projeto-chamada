@@ -67,12 +67,12 @@ namespace View.restrito {
         protected global::System.Web.UI.WebControls.Button btnSalvar;
         
         /// <summary>
-        /// Controle listaGrid.
+        /// Controle listaGridAulas.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView listaGrid;
+        protected global::System.Web.UI.WebControls.GridView listaGridAulas;
     }
 }

@@ -20,14 +20,34 @@ namespace View.restrito
            
         }
 
-        protected void listaGrid_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void listaGridAulas_RowCommand(object sender, GridViewCommandEventArgs e)
         {
 
-               Aula a = new Aula();
-               a.idAula = int.Parse(listaGrid.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text);
+            switch (e.CommandName)
+            {
+                case "alterar":
+                    {
 
-              new AulaController().Excluir(a);
-              Carregar();
+                        int id = int.Parse(listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text);
+                        txtNome.Text = listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[1].Text;
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
+
+                    }
+                    break;
+
+                case "excluir":
+                    {
+
+                        Aula aula = new Aula();
+                        aula.idAula = int.Parse(listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text);
+
+                        new AulaController().Excluir(aula);
+                        Carregar();
+
+                    }
+                    break;
+            }
+            Carregar();
         }
 
 
@@ -37,19 +57,19 @@ namespace View.restrito
         {
             List<Aula> aulas = new AulaController().Listar(new Aula());
 
-            listaGrid.DataSource = aulas;
+            listaGridAulas.DataSource = aulas;
 
-            listaGrid.DataBind();
+            listaGridAulas.DataBind();
         }
 
         protected void btnModal_Click(object sender, EventArgs e)
         {
             profNome.Text = professor.Nome;
             TurmaController t = new TurmaController();
-            foreach (Turma turma in t.Listar())
-            {
-                dropDownTurmas.Items.Add(turma.Nome);
-            }
+           // foreach (Turma turma in t.Listar())
+           // {
+            //    dropDownTurmas.Items.Add(turma.Nome);
+          //  }
 
             ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
         }

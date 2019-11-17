@@ -31,12 +31,12 @@ namespace View.restrito {
         protected global::System.Web.UI.WebControls.TextBox txtNome;
         
         /// <summary>
-        /// Controle listaGrid.
+        /// Controle listaGridAlunos.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView listaGrid;
+        protected global::System.Web.UI.WebControls.GridView listaGridAlunos;
     }
 }

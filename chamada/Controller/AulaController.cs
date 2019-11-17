@@ -62,7 +62,7 @@ namespace Controller
                 throw new ConsistenciaException("Por favor, informa um Professor");
             }
 
-            MySqlCommand cmd = new MySqlCommand(@"update Aula
+            MySqlCommand cmd = new MySqlCommand(@"update aula
                  set Nome = @Nome,
                      idTurma = @idTurma,
                      idProfessor = @idProfessor

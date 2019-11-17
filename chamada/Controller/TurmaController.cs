@@ -18,7 +18,7 @@ namespace Controller
                 throw new ConsistenciaException("Por favor, digite o nome da Turma.");
             }
 
-            MySqlCommand cmd = new MySqlCommand(@"insert into Turma values(
+            MySqlCommand cmd = new MySqlCommand(@"insert into turma values(
                  default,
                  @Nome,
             ");
@@ -41,7 +41,7 @@ namespace Controller
                 throw new ConsistenciaException("Por favor, digite o nome da Turma.");
             }
 
-            MySqlCommand cmd = new MySqlCommand(@"update Turma
+            MySqlCommand cmd = new MySqlCommand(@"update turma
                  set Nome = @Nome,
                where idTurma = @idTurma
              ");
@@ -59,9 +59,9 @@ namespace Controller
         public void Excluir(Turma objEntrada)
         {
 
-            MySqlCommand cmd = new MySqlCommand("delete from Turma where idTurma = @idTurma");
+            MySqlCommand cmd = new MySqlCommand("delete from turma where idTurma = @idTurma");
 
-            cmd.Parameters.Add(new MySqlParameter("idAluno", objEntrada.idTurma));
+            cmd.Parameters.Add(new MySqlParameter("idTurma", objEntrada.idTurma));
 
             Conexao c = new Conexao();
             c.Abrir();
@@ -70,7 +70,7 @@ namespace Controller
 
         }
 
-        public List<Turma> Listar()
+        public List<Turma> Listar(Turma objEntrada)
         {
 
             MySqlCommand cmd = null;

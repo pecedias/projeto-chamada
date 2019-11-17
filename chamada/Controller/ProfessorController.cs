@@ -55,11 +55,11 @@ namespace Controller
             {
 
                 cmd = new MySqlCommand(@"
-                 select Professor.idProfessor,
-                        Professor.Nome,
-                        Professor.Email
-                   from Professor
-                   where Professor.idProfessor = @idProfessor");
+                 select professor.idProfessor,
+                        professor.Nome,
+                        professor.Email
+                   from professor
+                   where professor.idProfessor = @idProfessor");
 
                 cmd.Parameters.Add(new MySqlParameter("idProfessor", objEntrada.idProfessor));
 
@@ -70,7 +70,7 @@ namespace Controller
                  select professor.idProfessor, 
                     professor.Nome, 
                     professor.Email 
-                    from Professor");
+                    from professor");
             }
 
             Conexao c = new Conexao();

@@ -12,7 +12,9 @@ namespace Model
         public int idTurma { get; set; }
         public String Nome { get; set; }
 
-        public Turma() {
+        public Turma()
+        {
+
         }
 
         public Turma(int idTurma, string nome)

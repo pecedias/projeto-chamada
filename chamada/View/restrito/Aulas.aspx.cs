@@ -28,10 +28,12 @@ namespace View.restrito
             {
                 case "alterar":
                     {
-
+                        action.Value = "update";
                         int id = int.Parse(listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text);
+                        idAula.Value = id.ToString();
                         profNome.Text = listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[1].Text;
-                        dropDownTurmas.Items.Add(listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[2].Text);
+                        ListItem lst = new ListItem(listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[2].Text, listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[4].Text);
+                        dropDownTurmas.Items.Add(lst);
                         txtNome.Text = listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[3].Text;                   
                         
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
@@ -60,7 +62,7 @@ namespace View.restrito
             //int idTurma = int.Parse(dropDownTurmas.SelectedValue.ToString());
             //int idProfessor = professor.idProfessor;
 
-            if (Request.QueryString["itemSel"] == null)
+            if (action.Value == "insert")
                 Incluir();
             else
                 Alterar();
@@ -77,6 +79,7 @@ namespace View.restrito
             listaGridAulas.DataSource = aulas;
 
             listaGridAulas.DataBind();
+            listaGridAulas.Columns[4].Visible = false;
         }
 
         protected void btnModal_Click(object sender, EventArgs e)
@@ -88,7 +91,7 @@ namespace View.restrito
                 ListItem lst = new ListItem(turma.Nome, turma.idTurma.ToString());
                 dropDownTurmas.Items.Add(lst);
             }
-
+            action.Value = "insert";
             ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
         }
 
@@ -102,14 +105,14 @@ namespace View.restrito
 
                 aula.Nome = txtNome.Text;
 
-                turma.idTurma = dropDownTurmas.SelectedIndex + 1;
+                turma.idTurma = Convert.ToInt32(dropDownTurmas.SelectedItem.Value);
 
                 aula.idTurma = turma;
                 aula.idProfessor = professor;
 
                 new AulaController().Incluir(aula);
 
-                Response.Redirect("../Aulas.aspx");
+                Response.Redirect("../restrito/Aulas.aspx");
 
             }
             catch (ConsistenciaException ex)
@@ -124,20 +127,21 @@ namespace View.restrito
             try
             {
 
-                Aula aula = (Aula)ViewState["itemSel"];
+                Aula aula = new Aula();
 
                 Turma turma = new Turma();
 
+                aula.idAula = Convert.ToInt32(idAula.Value);
                 aula.Nome = txtNome.Text;
                 aula.idProfessor = professor;
 
-                turma.idTurma = int.Parse(dropDownTurmas.SelectedValue);
+                turma.idTurma = Convert.ToInt32(dropDownTurmas.SelectedItem.Value);
 
                 aula.idTurma = turma;
 
                 new AulaController().Atualizar(aula);
 
-                Response.Redirect("../Aulas.aspx");
+                Response.Redirect("../restrito/Aulas.aspx");
 
             }
             catch (ConsistenciaException ex)

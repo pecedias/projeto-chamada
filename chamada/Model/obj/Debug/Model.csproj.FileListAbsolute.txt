@@ -33,3 +33,8 @@ C:\Users\pc_di\Desktop\projeto-chamada\chamada\Model\obj\Debug\Model.csprojAssem
 C:\Users\pc_di\Desktop\projeto-chamada\chamada\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\Users\pc_di\Desktop\projeto-chamada\chamada\Model\obj\Debug\Model.dll
 C:\Users\pc_di\Desktop\projeto-chamada\chamada\Model\obj\Debug\Model.pdb
+C:\Users\vcezario\Documents\Projetos\chamada\Model\bin\Debug\Model.dll
+C:\Users\vcezario\Documents\Projetos\chamada\Model\bin\Debug\Model.pdb
+C:\Users\vcezario\Documents\Projetos\chamada\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\vcezario\Documents\Projetos\chamada\Model\obj\Debug\Model.dll
+C:\Users\vcezario\Documents\Projetos\chamada\Model\obj\Debug\Model.pdb

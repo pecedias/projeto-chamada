@@ -53,9 +53,9 @@ namespace Controller
 
             MySqlCommand cmd = new MySqlCommand(@"update aula
                  set 
-                     idProfessor = @idProfessor        
+                     idProfessor = @idProfessor,      
                      idTurma = @idTurma,
-                     Nome = @Nome,
+                     Nome = @Nome
                where idAula = @idAula
              ");
 
@@ -94,7 +94,8 @@ namespace Controller
                  select aula.idAula,
                         professor.Nome,
                         turma.Nome,
-                        aula.Nome
+                        aula.Nome,
+                        turma.idTurma
                         from aula
                         inner join professor
                         on professor.idProfessor = aula.idProfessor
@@ -120,6 +121,7 @@ namespace Controller
                 professor.Nome = reader.GetString(1);
                 turma.Nome = reader.GetString(2);
                 aula.Nome = reader.GetString(3);
+                turma.idTurma = reader.GetInt32(4);
 
                 aula.idProfessor = professor;
                 aula.idTurma = turma;

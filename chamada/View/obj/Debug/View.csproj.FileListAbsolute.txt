@@ -404,3 +404,6 @@ C:\Users\pc_di\Desktop\projeto-chamada\chamada\View\obj\Debug\View.pdb
 C:\Users\Joao\Documents\GitHub\projeto-chamada\chamada\View\bin\nunit.framework.dll
 C:\Users\Joao\Documents\GitHub\projeto-chamada\chamada\View\bin\nunit.framework.pdb
 C:\Users\Joao\Documents\GitHub\projeto-chamada\chamada\View\bin\nunit.framework.xml
+C:\Users\pc_di\Desktop\projeto-chamada\chamada\View\bin\nunit.framework.dll
+C:\Users\pc_di\Desktop\projeto-chamada\chamada\View\bin\nunit.framework.pdb
+C:\Users\pc_di\Desktop\projeto-chamada\chamada\View\bin\nunit.framework.xml

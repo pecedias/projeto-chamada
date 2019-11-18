@@ -11,8 +11,7 @@ namespace View.restrito
 {
     public partial class Aulas : System.Web.UI.Page
     {
-        public Professor professor;
-        public string nomeTurma = "";
+        Professor professor;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -28,14 +27,16 @@ namespace View.restrito
             {
                 case "alterar":
                     {
-
+                        ListItem item = new ListItem(listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[3].Text, listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[2].Text);
+                        CarregarCombo();
                         int id = int.Parse(listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text);
                         profNome.Text = listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[1].Text;
                         dropDownTurmas.Items.Add(listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[2].Text);
+                        //dropDownTurmas.SelectedValue = item.Value;
+                        //dropDownTurmas.Text = listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[2].Text;
                         txtNome.Text = listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[3].Text;                   
                         
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
-
                     }
                     break;
 
@@ -54,11 +55,19 @@ namespace View.restrito
             Carregar();
         }
 
+        public void CarregarCombo()
+        {
+            dropDownTurmas.Items.Clear();
+            List<Turma> lst = new TurmaController().Listar(new Turma());
+
+            foreach (Turma item in lst)
+            {
+                dropDownTurmas.Items.Add(new ListItem(item.Nome, item.idTurma.ToString()));
+            }
+        }
+
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
-            //salvar dados
-            //int idTurma = int.Parse(dropDownTurmas.SelectedValue.ToString());
-            //int idProfessor = professor.idProfessor;
 
             if (Request.QueryString["itemSel"] == null)
                 Incluir();
@@ -66,7 +75,6 @@ namespace View.restrito
                 Alterar();
 
         }
-
 
         #region Métodos
 
@@ -82,12 +90,8 @@ namespace View.restrito
         protected void btnModal_Click(object sender, EventArgs e)
         {
             profNome.Text = professor.Nome;
-            TurmaController t = new TurmaController();
-            foreach (Turma turma in t.Listar(new Turma()))
-            {
-                ListItem lst = new ListItem(turma.Nome, turma.idTurma.ToString());
-                dropDownTurmas.Items.Add(lst);
-            }
+
+            CarregarCombo();
 
             ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
         }
@@ -102,14 +106,14 @@ namespace View.restrito
 
                 aula.Nome = txtNome.Text;
 
-                turma.idTurma = dropDownTurmas.SelectedIndex + 1;
+                turma.idTurma = int.Parse(dropDownTurmas.SelectedValue);
 
                 aula.idTurma = turma;
                 aula.idProfessor = professor;
 
                 new AulaController().Incluir(aula);
 
-                Response.Redirect("../Aulas.aspx");
+                Response.Redirect("Aulas.aspx");
 
             }
             catch (ConsistenciaException ex)
@@ -137,7 +141,7 @@ namespace View.restrito
 
                 new AulaController().Atualizar(aula);
 
-                Response.Redirect("../Aulas.aspx");
+                Response.Redirect("Aulas.aspx");
 
             }
             catch (ConsistenciaException ex)

@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\ChamadaTeste\\ChamadaTeste.csproj": {}
+    "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\ChamadaTeste\\ChamadaTeste.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\ChamadaTeste\\ChamadaTeste.csproj": {
+    "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\ChamadaTeste\\ChamadaTeste.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\ChamadaTeste\\ChamadaTeste.csproj",
+        "projectUniqueName": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\ChamadaTeste\\ChamadaTeste.csproj",
         "projectName": "ChamadaTeste",
-        "projectPath": "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\ChamadaTeste\\ChamadaTeste.csproj",
-        "packagesPath": "C:\\Users\\pc_di\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\ChamadaTeste\\obj\\",
+        "projectPath": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\ChamadaTeste\\ChamadaTeste.csproj",
+        "packagesPath": "C:\\Users\\Joao\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\ChamadaTeste\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\pc_di\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Joao\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -32,11 +30,11 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\Controller\\Controller.csproj": {
-                "projectPath": "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\Controller\\Controller.csproj"
+              "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Controller\\Controller.csproj": {
+                "projectPath": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Controller\\Controller.csproj"
               },
-              "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\Model\\Model.csproj"
+              "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Model\\Model.csproj"
               }
             }
           }
@@ -88,17 +86,17 @@
         }
       }
     },
-    "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\Controller\\Controller.csproj": {
+    "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Controller\\Controller.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\Controller\\Controller.csproj",
+        "projectUniqueName": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Controller\\Controller.csproj",
         "projectName": "Controller",
-        "projectPath": "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\Controller\\Controller.csproj",
+        "projectPath": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Controller\\Controller.csproj",
         "frameworks": {
           "net452": {
             "projectReferences": {
-              "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\Model\\Model.csproj"
+              "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Model\\Model.csproj"
               }
             }
           }
@@ -108,12 +106,12 @@
         "net452": {}
       }
     },
-    "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\Model\\Model.csproj": {
+    "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\Model\\Model.csproj"
+        "projectPath": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Model\\Model.csproj"
       },
       "frameworks": {
         "net452": {}

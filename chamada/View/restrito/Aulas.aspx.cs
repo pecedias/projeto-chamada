@@ -27,16 +27,16 @@ namespace View.restrito
             {
                 case "alterar":
                     {
-                        ListItem item = new ListItem(listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[3].Text, listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[2].Text);
+                        btnSalvar.Visible = true;
+                        btnIncluir.Visible = false;
                         CarregarCombo();
                         int id = int.Parse(listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text);
                         profNome.Text = listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[1].Text;
-                        dropDownTurmas.Items.Add(listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[2].Text);
-                        //dropDownTurmas.SelectedValue = item.Value;
-                        //dropDownTurmas.Text = listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[2].Text;
-                        txtNome.Text = listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[3].Text;                   
-                        
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
+                        ListItem txt = dropDownTurmas.Items.FindByText(listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[2].Text);
+                        txt.Selected = true;
+                        txtNome.Text = listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[3].Text;
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show');});</script>", false);
+
                     }
                     break;
 
@@ -68,12 +68,18 @@ namespace View.restrito
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
-
-            if (Request.QueryString["itemSel"] == null)
-                Incluir();
-            else
                 Alterar();
 
+        }
+
+        protected void btnModal_Click(object sender, EventArgs e)
+        {
+            profNome.Text = professor.Nome;
+            btnSalvar.Visible = false;
+            btnIncluir.Visible = true;
+            CarregarCombo();
+
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
         }
 
         #region Métodos
@@ -87,14 +93,7 @@ namespace View.restrito
             listaGridAulas.DataBind();
         }
 
-        protected void btnModal_Click(object sender, EventArgs e)
-        {
-            profNome.Text = professor.Nome;
-
-            CarregarCombo();
-
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
-        }
+       
 
         public void Incluir()
         {
@@ -154,6 +153,11 @@ namespace View.restrito
         private void ExibirMensagemAlert(string mensagem)
         {
             throw new NotImplementedException();
+        }
+
+        protected void btnIncluir_Click(object sender, EventArgs e)
+        {
+            Incluir();
         }
     }
 }

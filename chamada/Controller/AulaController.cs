@@ -134,5 +134,102 @@ namespace Controller
 
         }
 
+        public List<Aula> ListarByName(Aula objEntrada)
+        {
+
+            MySqlCommand cmd = null;
+
+            cmd = new MySqlCommand(@"
+                 select aula.idAula,
+                        professor.Nome,
+                        turma.Nome,
+                        aula.Nome
+                        from aula
+                        inner join professor
+                        on professor.idProfessor = aula.idProfessor
+                        inner join turma
+                        on turma.idTurma = aula.idTurma where aula.Nome = @Nome
+            ");
+            cmd.Parameters.Add(new MySqlParameter("Nome", objEntrada.Nome));
+            Conexao c = new Conexao();
+
+            c.Abrir();
+
+            MySqlDataReader reader = c.Pesquisar(cmd);
+
+            List<Aula> lstRetorno = new List<Aula>();
+
+            while (reader.Read())
+            {
+                Aula aula = new Aula();
+                Professor professor = new Professor();
+                Turma turma = new Turma();
+
+                aula.idAula = reader.GetInt32(0);
+                professor.Nome = reader.GetString(1);
+                turma.Nome = reader.GetString(2);
+                aula.Nome = reader.GetString(3);
+
+                aula.idProfessor = professor;
+                aula.idTurma = turma;
+
+                lstRetorno.Add(aula);
+
+            }
+
+            c.Fechar();
+
+            return lstRetorno;
+
+        }
+        public List<Aula> ListarById(Aula objEntrada)
+        {
+
+            MySqlCommand cmd = null;
+
+            cmd = new MySqlCommand(@"
+                 select aula.idAula,
+                        professor.Nome,
+                        turma.Nome,
+                        aula.Nome
+                        from aula
+                        inner join professor
+                        on professor.idProfessor = aula.idProfessor
+                        inner join turma
+                        on turma.idTurma = aula.idTurma where aula.idAula = @Nome
+            ");
+            cmd.Parameters.Add(new MySqlParameter("Nome", objEntrada.idAula));
+            Conexao c = new Conexao();
+
+            c.Abrir();
+
+            MySqlDataReader reader = c.Pesquisar(cmd);
+
+            List<Aula> lstRetorno = new List<Aula>();
+
+            while (reader.Read())
+            {
+                Aula aula = new Aula();
+                Professor professor = new Professor();
+                Turma turma = new Turma();
+
+                aula.idAula = reader.GetInt32(0);
+                professor.Nome = reader.GetString(1);
+                turma.Nome = reader.GetString(2);
+                aula.Nome = reader.GetString(3);
+
+                aula.idProfessor = professor;
+                aula.idTurma = turma;
+
+                lstRetorno.Add(aula);
+
+            }
+
+            c.Fechar();
+
+            return lstRetorno;
+
+        }
+
     }
 }

@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace Controller
 {
-    class ChamadaController
+    public class ChamadaController
     {
 
         public List<Chamada> ListarPresenca(Chamada objEntrada)

@@ -1,0 +1,121 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\ChamadaTeste\\ChamadaTeste.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\ChamadaTeste\\ChamadaTeste.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\ChamadaTeste\\ChamadaTeste.csproj",
+        "projectName": "ChamadaTeste",
+        "projectPath": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\ChamadaTeste\\ChamadaTeste.csproj",
+        "packagesPath": "C:\\Users\\Joao\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\ChamadaTeste\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Joao\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Controller\\Controller.csproj": {
+                "projectPath": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Controller\\Controller.csproj"
+              },
+              "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Model\\Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[15.8.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[3.10.0, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
+            "System.Management": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
+            "System.Security.Permissions": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
+            "nunit": {
+              "target": "Package",
+              "version": "[3.10.1, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Controller\\Controller.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Controller\\Controller.csproj",
+        "projectName": "Controller",
+        "projectPath": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Controller\\Controller.csproj",
+        "frameworks": {
+          "net452": {
+            "projectReferences": {
+              "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Model\\Model.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net452": {}
+      }
+    },
+    "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Model\\Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Model\\Model.csproj",
+        "projectName": "Model",
+        "projectPath": "C:\\Users\\Joao\\Documents\\GitHub\\projeto-chamada\\chamada\\Model\\Model.csproj"
+      },
+      "frameworks": {
+        "net452": {}
+      }
+    }
+  }
+}

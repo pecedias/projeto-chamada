@@ -102,5 +102,41 @@ namespace Controller
             return lstRetorno;
 
         }
+
+
+        public List<Turma> ListarByName(Turma objEntrada)
+        {
+
+            MySqlCommand cmd = null;
+
+            cmd = new MySqlCommand(@"
+                 select turma.idTurma,      
+                        turma.Nome from turma where Nome = @nome;
+            ");
+            cmd.Parameters.Add(new MySqlParameter("nome", objEntrada.Nome));
+            Conexao c = new Conexao();
+
+            c.Abrir();
+
+            MySqlDataReader reader = c.Pesquisar(cmd);
+
+            List<Turma> lstRetorno = new List<Turma>();
+
+            while (reader.Read())
+            {
+                Turma turma = new Turma();
+
+                turma.idTurma = reader.GetInt32(0);
+                turma.Nome = reader.GetString(1);
+
+                lstRetorno.Add(turma);
+
+            }
+
+            c.Fechar();
+
+            return lstRetorno;
+
+        }
     }
 }

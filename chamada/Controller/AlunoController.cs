@@ -96,15 +96,104 @@ namespace Controller
 
             MySqlCommand cmd = null;
 
-                cmd = new MySqlCommand(@"
+            cmd = new MySqlCommand(@"
                  select aluno.idAluno,
                         aluno.Nome,
                         aluno.Matricula,
                         turma.Nome
                    from aluno
                    inner join turma 
-                   on turma.idTurma = aluno.idTurma");
-           
+                   on turma.idTurma = aluno.idTurma") ;
+            cmd.Parameters.Add(new MySqlParameter("Matricula", objEntrada.Matricula));
+            Conexao c = new Conexao();
+
+            c.Abrir();
+
+            MySqlDataReader reader = c.Pesquisar(cmd);
+
+            List<Aluno> lstRetorno = new List<Aluno>();
+
+            while (reader.Read())
+            {
+                Aluno aluno = new Aluno();
+                Turma turma = new Turma();
+
+                aluno.idAluno = reader.GetInt32(0);
+                aluno.Nome = reader.GetString(1);
+                aluno.Matricula = reader.GetInt32(2);
+                turma.Nome = reader.GetString(3);
+
+                aluno.idTurma = turma;
+
+                lstRetorno.Add(aluno);
+
+            }
+
+            c.Fechar();
+
+            return lstRetorno;
+
+        }
+
+        public List<Aluno> ListarByMatricula(Aluno objEntrada)
+        {
+
+            MySqlCommand cmd = null;
+
+            cmd = new MySqlCommand(@"
+                 select aluno.idAluno,
+                        aluno.Nome,
+                        aluno.Matricula,
+                        turma.Nome
+                   from aluno
+                   inner join turma 
+                   on turma.idTurma = aluno.idTurma where aluno.Matricula = @Matricula");
+            cmd.Parameters.Add(new MySqlParameter("Matricula", objEntrada.Matricula));
+            Conexao c = new Conexao();
+
+            c.Abrir();
+
+            MySqlDataReader reader = c.Pesquisar(cmd);
+
+            List<Aluno> lstRetorno = new List<Aluno>();
+
+            while (reader.Read())
+            {
+                Aluno aluno = new Aluno();
+                Turma turma = new Turma();
+
+                aluno.idAluno = reader.GetInt32(0);
+                aluno.Nome = reader.GetString(1);
+                aluno.Matricula = reader.GetInt32(2);
+                turma.Nome = reader.GetString(3);
+
+                aluno.idTurma = turma;
+
+                lstRetorno.Add(aluno);
+
+            }
+
+            c.Fechar();
+
+            return lstRetorno;
+
+        }
+
+
+        public List<Aluno> ListarById(Aluno objEntrada)
+        {
+
+            MySqlCommand cmd = null;
+
+            cmd = new MySqlCommand(@"
+                 select aluno.idAluno,
+                        aluno.Nome,
+                        aluno.Matricula,
+                        turma.Nome
+                   from aluno
+                   inner join turma 
+                   on turma.idTurma = aluno.idTurma where aluno.idAluno = @idAluno");
+            cmd.Parameters.Add(new MySqlParameter("idAluno", objEntrada.idAluno));
             Conexao c = new Conexao();
 
             c.Abrir();

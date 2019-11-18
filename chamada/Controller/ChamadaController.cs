@@ -17,15 +17,13 @@ namespace Controller
             MySqlCommand cmd = null;
 
             cmd = new MySqlCommand(@"
-                    SELECT a.idAluno,a.Nome,c.DataHora 
-                    FROM orbx01.chamada c 
-                    inner join aluno a 
-                    where a.idAluno = @idAluno
-                    AND c.idAula = @idAula
+                    SELECT c.idChamada,a.Nome,c.DataHora 
+                    FROM chamada c 
+                    inner join aluno a ON a.idAluno = c.idAluno
+                    where c.idAula = @idAula
             ");
 
-            cmd.Parameters.Add(new MySqlParameter("idAula", objEntrada.idAula));
-            cmd.Parameters.Add(new MySqlParameter("idAluno", objEntrada.idAluno));
+            cmd.Parameters.Add(new MySqlParameter("idAula", objEntrada.idAula.idAula));
 
             Conexao c = new Conexao();
 
@@ -38,10 +36,12 @@ namespace Controller
             while (reader.Read())
             {
                 Chamada chamada = new Chamada();
+                Aluno a = new Aluno();
+                a.Nome = reader.GetString(1);
 
-                chamada.idAluno.Matricula = reader.GetInt32(1);
-                chamada.idAluno.Nome = reader.GetString(2);
-
+                chamada.idChamada = reader.GetInt32(0);
+                chamada.idAluno = a;
+                chamada.datahora = reader.GetDateTime(2);
                 lstRetorno.Add(chamada);
 
             }
@@ -57,15 +57,14 @@ namespace Controller
             MySqlCommand cmd = null;
 
             cmd = new MySqlCommand(@"
-                    select * from aluno a 
-                    INNER JOIN aula al ON a.idTurma = @idTurma
-                    where idAluno not in(
+                    select a.idAluno,a.Nome from aluno a 
+                    INNER JOIN aula al ON a.idTurma = al.idTurma
+                    where a.idAluno not in(
                     SELECT idAluno FROM chamada c WHERE c.idAula = @idAula
                     ) AND al.idAula = @idAula
             ");
 
-            cmd.Parameters.Add(new MySqlParameter("idAula", objEntrada.idAula));
-            cmd.Parameters.Add(new MySqlParameter("idTurma", objEntrada.idAula.idTurma));
+            cmd.Parameters.Add(new MySqlParameter("idAula", objEntrada.idAula.idAula));
 
             Conexao c = new Conexao();
 
@@ -78,10 +77,10 @@ namespace Controller
             while (reader.Read())
             {
                 Chamada chamada = new Chamada();
+                Aluno a = new Aluno();
+                a.Nome = reader.GetString(1);
 
-                chamada.idAluno.Matricula = reader.GetInt32(2);
-                chamada.idAluno.Nome = reader.GetString(3);
-
+                chamada.idAluno = a;
                 lstRetorno.Add(chamada);
 
             }

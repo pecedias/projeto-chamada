@@ -49,6 +49,24 @@ namespace View.restrito {
         protected global::System.Web.UI.WebControls.DropDownList dropDownPresenca;
         
         /// <summary>
+        /// Controle dropDownChamadas.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dropDownChamadas;
+        
+        /// <summary>
+        /// Controle btnChamada.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnChamada;
+        
+        /// <summary>
         /// Controle listaGridChamadaPresenca.
         /// </summary>
         /// <remarks>

@@ -95,16 +95,15 @@
                           </div>
                       </div>
                    <!-- Lista -->
+                   <p>Selecionar: <asp:DropDownList ID="dropDownChamadas" CssClass="btn btn-primary dropdown-toggle" runat="server"></asp:DropDownList></p>
+                   <asp:Button runat="server" id="btnChamada" OnClick="btnChamada_Click" CssClass="btn btn-primary" Text="Selecionar"/>
                    <asp:GridView ID="listaGridChamadaPresenca" runat="server"
                      CssClass="table table-dark m-1"
-                    AutoGenerateColumns="false" OnRowCommand="listaGridChamadaPresenca_RowCommand">
+                    AutoGenerateColumns="false">
                        <Columns>
                            <asp:BoundField DataField="idChamada" HeaderText="ID Turma" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
-                           <asp:BoundField DataField="idAluno" HeaderText="Nome Aluno" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
-                           <asp:BoundField DataField="presenca" HeaderText="Presença" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
-                           <asp:BoundField DataField="data" HeaderText="Data" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
-                           <asp:BoundField DataField="hora" HeaderText="Hora" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
-                           <asp:ButtonField CommandName="alterar" ButtonType="Button" ControlStyle-CssClass="btn btn-primary" Text="Alterar" HeaderText="Alterar" ItemStyle-Width="40px" ItemStyle-HorizontalAlign="Center"  />
+                           <asp:BoundField DataField="idAluno.Nome" HeaderText="Nome Aluno" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
+                           <asp:BoundField DataField="datahora" HeaderText="Data" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
                        </Columns>
                    </asp:GridView>
                   <div>
@@ -113,14 +112,9 @@
                     <!-- Lista -->
                    <asp:GridView ID="listaGridChamadaFaltas" runat="server"
                      CssClass="table table-dark m-1"
-                    AutoGenerateColumns="false" OnRowCommand="listaGridChamadaFaltas_RowCommand">
+                    AutoGenerateColumns="false">
                        <Columns>
-                           <asp:BoundField DataField="idChamadaF" HeaderText="ID Turma" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
-                           <asp:BoundField DataField="idAlunoF" HeaderText="Nome Aluno" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
-                           <asp:BoundField DataField="presencaF" HeaderText="Presença" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
-                           <asp:BoundField DataField="dataF" HeaderText="Data" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
-                           <asp:BoundField DataField="horaF" HeaderText="Hora" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
-                           <asp:ButtonField CommandName="alterar" ButtonType="Button" ControlStyle-CssClass="btn btn-primary" Text="Alterar" HeaderText="Alterar" ItemStyle-Width="40px" ItemStyle-HorizontalAlign="Center"  />
+                           <asp:BoundField DataField="idAluno.Nome" HeaderText="Nome Aluno" ItemStyle-Height="16px" ItemStyle-Width="60px" ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" />
                        </Columns>
                    </asp:GridView>
                    <asp:ScriptManager runat="server"></asp:ScriptManager>

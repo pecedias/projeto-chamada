@@ -13,7 +13,7 @@ namespace Model
         public Aula idAula { get; set; }
         public Aluno idAluno { get; set; }
         public int Presenca { get; set; }
-
+        public DateTime datahora { get; set; }
         public Chamada()
         {
 

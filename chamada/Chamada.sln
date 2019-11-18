@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Controller\Controller.csproj", "{1513AC88-650D-412D-9B76-B23E22F815BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChamadaTeste", "ChamadaTeste\ChamadaTeste.csproj", "{773D26AB-FF8C-4096-B1A0-64BCAA956BF5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{1513AC88-650D-412D-9B76-B23E22F815BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1513AC88-650D-412D-9B76-B23E22F815BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1513AC88-650D-412D-9B76-B23E22F815BD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{773D26AB-FF8C-4096-B1A0-64BCAA956BF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{773D26AB-FF8C-4096-B1A0-64BCAA956BF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{773D26AB-FF8C-4096-B1A0-64BCAA956BF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{773D26AB-FF8C-4096-B1A0-64BCAA956BF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

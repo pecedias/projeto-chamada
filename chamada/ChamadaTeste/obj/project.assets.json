@@ -6157,27 +6157,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pc_di\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\ChamadaTeste\\ChamadaTeste.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Documents\\projeto-chamada\\chamada\\ChamadaTeste\\ChamadaTeste.csproj",
       "projectName": "ChamadaTeste",
-      "projectPath": "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\ChamadaTeste\\ChamadaTeste.csproj",
-      "packagesPath": "C:\\Users\\pc_di\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\ChamadaTeste\\obj\\",
+      "projectPath": "C:\\Users\\Usuario\\Documents\\projeto-chamada\\chamada\\ChamadaTeste\\ChamadaTeste.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\Documents\\projeto-chamada\\chamada\\ChamadaTeste\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\pc_di\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -6189,11 +6186,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\Controller\\Controller.csproj": {
-              "projectPath": "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\Controller\\Controller.csproj"
+            "C:\\Users\\Usuario\\Documents\\projeto-chamada\\chamada\\Controller\\Controller.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\Documents\\projeto-chamada\\chamada\\Controller\\Controller.csproj"
             },
-            "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\Model\\Model.csproj": {
-              "projectPath": "C:\\Users\\pc_di\\Desktop\\projeto-chamada\\chamada\\Model\\Model.csproj"
+            "C:\\Users\\Usuario\\Documents\\projeto-chamada\\chamada\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\Documents\\projeto-chamada\\chamada\\Model\\Model.csproj"
             }
           }
         }

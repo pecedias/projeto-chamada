@@ -84,11 +84,13 @@
                                 </button>
                               </div>
                               <div class="modal-body">
+                                <asp:TextBox ID="txtTurma" runat="server" MaxLength="120" Visible="false"></asp:TextBox>
                                 <p>Nome: <asp:TextBox ID="txtNomeTurma" runat="server" MaxLength="120"></asp:TextBox></p>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                                 <asp:Button  ID="btnSalvar" runat="server" CssClass="btn btn-primary" OnClick="btnSalvar_Click" Text="Salvar mudanças"/>
+                                 <asp:Button  ID="btnIncluir" runat="server" CssClass="btn btn-primary" OnClick="btnIncluir_Click" Text="Incluir"/>
                               </div>
                             </div>
                           </div>

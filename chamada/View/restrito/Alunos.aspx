@@ -73,17 +73,18 @@
                <h1>Lista de Alunos</h1>
                <form id="form1" runat="server">
                    <asp:Button  ID="btnModal" runat="server" CssClass="btn btn-primary" OnClick="btnModal_Click" Text="Novo Aluno(a)"/>
-                      <!--- Modal Adicionar -->
-                    <div class="modal" id="modalAdicionar" tabindex="-1" role="dialog">
+                      <!--- Modal Editar -->
+                    <div class="modal" id="modal" tabindex="-1" role="dialog">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title">Novo Aluno(a)</h5>
+                                <h5 class="modal-title">Nova Aula</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
                               <div class="modal-body">
+                                <asp:TextBox ID="txtAluno" runat="server" MaxLength="120" Visible="false"></asp:TextBox>
                                 <p>Nome: <asp:TextBox ID="txtNomeAluno" runat="server" MaxLength="120"></asp:TextBox></p>
                                 <p>Matricula: <asp:TextBox ID="txtMatricula" runat="server" MaxLength="120"></asp:TextBox></p>
                                 <p>Turma: <asp:DropDownList ID="dropDownTurmas" CssClass="btn btn-primary dropdown-toggle" runat="server"></asp:DropDownList></p>
@@ -91,27 +92,7 @@
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                                 <asp:Button  ID="btnSalvar" runat="server" CssClass="btn btn-primary" OnClick="btnSalvar_Click" Text="Salvar mudanças"/>
-                              </div>
-                            </div>
-                          </div>
-                      </div>
-                      <!--- Modal Editar -->
-                    <div class="modal" id="modal" tabindex="-1" role="dialog">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title">Editando <asp:Label ID="editLabel"></asp:Label></h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-                                <p>Nome: <asp:TextBox ID="txtNome" runat="server" MaxLength="120"></asp:TextBox></p>
-                                <p>Turma: <asp:DropDownList ID="turmaDropDown"></asp:DropDownList></p>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                               <asp:Button  ID="btnUpdate" runat="server" CssClass="btn btn-primary" OnClick="btnUpdate_Click" Text="Salvar mudanças"/>
+                                 <asp:Button  ID="btnIncluir" runat="server" CssClass="btn btn-primary" OnClick="btnIncluir_Click" Text="Incluir"/>
                               </div>
                             </div>
                           </div>

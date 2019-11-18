@@ -11,7 +11,6 @@ namespace View.restrito
 {
     public partial class Turmas : System.Web.UI.Page
     {
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -26,11 +25,12 @@ namespace View.restrito
             {
                 case "alterar":
                     {
+                        btnSalvar.Visible = true;
+                        btnIncluir.Visible = false;
 
-                        int id = int.Parse(listaGridTurmas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text);
+                        txtTurma.Text = listaGridTurmas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text;
                         txtNomeTurma.Text = listaGridTurmas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[1].Text;
-
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show');});</script>", false);
 
                     }
                     break;
@@ -52,13 +52,19 @@ namespace View.restrito
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
+            Alterar();
 
-            if (Request.QueryString["itemSel"] == null)
-                Incluir();
-            else
-                Alterar();
         }
 
+        protected void btnModal_Click(object sender, EventArgs e)
+        {
+            txtNomeTurma.Text = "";
+
+            btnSalvar.Visible = false;
+            btnIncluir.Visible = true;
+
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
+        }
 
         #region Métodos
 
@@ -71,23 +77,15 @@ namespace View.restrito
             listaGridTurmas.DataBind();
         }
 
-        protected void btnModal_Click(object sender, EventArgs e)
-        {
 
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
-        }
 
         public void Incluir()
         {
             try
             {
-
                 Turma turma = new Turma();
 
                 turma.Nome = txtNomeTurma.Text;
-
-
-              //  turma.idTurma = txtNomeTurma;
 
                 new TurmaController().Incluir(turma);
 
@@ -106,12 +104,10 @@ namespace View.restrito
             try
             {
 
-                Turma turma = (Turma)ViewState["itemSel"];
+                Turma turma = new Turma();
 
-
+                turma.idTurma = int.Parse(txtTurma.Text);
                 turma.Nome = txtNomeTurma.Text;
-
-                //turma.idTurma = turma;
 
                 new TurmaController().Atualizar(turma);
 
@@ -128,6 +124,11 @@ namespace View.restrito
         private void ExibirMensagemAlert(string mensagem)
         {
             throw new NotImplementedException();
+        }
+
+        protected void btnIncluir_Click(object sender, EventArgs e)
+        {
+            Incluir();
         }
     }
 }

@@ -31,6 +31,15 @@ namespace View.restrito {
         protected global::System.Web.UI.WebControls.Button btnModal;
         
         /// <summary>
+        /// Controle txtAluno.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAluno;
+        
+        /// <summary>
         /// Controle txtNomeAluno.
         /// </summary>
         /// <remarks>
@@ -67,22 +76,13 @@ namespace View.restrito {
         protected global::System.Web.UI.WebControls.Button btnSalvar;
         
         /// <summary>
-        /// Controle txtNome.
+        /// Controle btnIncluir.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNome;
-        
-        /// <summary>
-        /// Controle btnUpdate.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdate;
+        protected global::System.Web.UI.WebControls.Button btnIncluir;
         
         /// <summary>
         /// Controle listaGridAlunos.

@@ -53,9 +53,9 @@ namespace Controller
 
             MySqlCommand cmd = new MySqlCommand(@"update aula
                  set 
-                     idProfessor = @idProfessor        
+                     idProfessor = @idProfessor,        
                      idTurma = @idTurma,
-                     Nome = @Nome,
+                     Nome = @Nome
                where idAula = @idAula
              ");
 

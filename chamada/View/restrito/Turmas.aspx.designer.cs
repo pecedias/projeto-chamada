@@ -31,6 +31,15 @@ namespace View.restrito {
         protected global::System.Web.UI.WebControls.Button btnModal;
         
         /// <summary>
+        /// Controle txtTurma.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTurma;
+        
+        /// <summary>
         /// Controle txtNomeTurma.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace View.restrito {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSalvar;
+        
+        /// <summary>
+        /// Controle btnIncluir.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnIncluir;
         
         /// <summary>
         /// Controle listaGridTurmas.

@@ -84,6 +84,7 @@
                                 </button>
                               </div>
                               <div class="modal-body">
+                                <asp:TextBox ID="txtAula" runat="server" MaxLength="120" Visible="false"></asp:TextBox>
                                 <p>Nome: <asp:TextBox ID="txtNome" runat="server" MaxLength="120"></asp:TextBox></p>
                                 <p>Turma: <asp:DropDownList ID="dropDownTurmas" CssClass="btn btn-primary dropdown-toggle" runat="server"></asp:DropDownList></p>
                                 <p>Professor: <asp:TextBox ID="profNome" runat="server" Enabled="false" ReadOnly="true"></asp:TextBox></p>

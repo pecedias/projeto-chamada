@@ -24,9 +24,15 @@ namespace View.restrito
             {
                 case "alterar":
                     {
+                        btnSalvar.Visible = true;
+                        btnIncluir.Visible = false;
+                        CarregarCombo();
 
-                        int id = int.Parse(listaGridAlunos.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text);
-                        txtNome.Text = listaGridAlunos.Rows[int.Parse(e.CommandArgument.ToString())].Cells[1].Text;
+                        txtAluno.Text = listaGridAlunos.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text;
+                        txtMatricula.Text = listaGridAlunos.Rows[int.Parse(e.CommandArgument.ToString())].Cells[2].Text;
+                        ListItem txt = dropDownTurmas.Items.FindByText(listaGridAlunos.Rows[int.Parse(e.CommandArgument.ToString())].Cells[3].Text);
+                        txt.Selected = true;
+                        txtNomeAluno.Text = listaGridAlunos.Rows[int.Parse(e.CommandArgument.ToString())].Cells[1].Text;
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
 
                     }
@@ -49,6 +55,17 @@ namespace View.restrito
 
         #region Métodos
 
+        public void CarregarCombo()
+        {
+            dropDownTurmas.Items.Clear();
+            List<Turma> lst = new TurmaController().Listar(new Turma());
+
+            foreach (Turma item in lst)
+            {
+                dropDownTurmas.Items.Add(new ListItem(item.Nome, item.idTurma.ToString()));
+            }
+        }
+
         public void Carregar()
         {
             List<Aluno> alunos = new AlunoController().Listar(new Aluno());
@@ -60,25 +77,81 @@ namespace View.restrito
 
         protected void btnModal_Click(object sender, EventArgs e)
         {
-            TurmaController t = new TurmaController();
-            foreach (Turma turma in t.Listar(new Turma()))
-            {
-                ListItem lst = new ListItem(turma.Nome, turma.idTurma.ToString());
-                dropDownTurmas.Items.Add(lst);
-            }
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modalAdicionar').modal('show'); });</script>", false);
+            btnSalvar.Visible = false;
+            btnIncluir.Visible = true;
+            CarregarCombo();
+
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$(function() { $('#modal').modal('show'); });</script>", false);
+        }
+
+        protected void btnIncluir_Click(object sender, EventArgs e)
+        {
+            Incluir();
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
-            //salvar novo aluno;
-            int idTurma = int.Parse(dropDownTurmas.SelectedValue.ToString());
-            String nome = txtNomeAluno.Text;
+            Alterar();
         }
 
-        protected void btnUpdate_Click(object sender, EventArgs e)
+        public void Incluir()
         {
-            //update Aluno;
+            try
+            {
+
+                Aluno aluno = new Aluno();
+                Turma turma = new Turma();
+
+                aluno.Nome = txtNomeAluno.Text;
+                aluno.Matricula = int.Parse(txtMatricula.Text);
+
+                turma.idTurma = int.Parse(dropDownTurmas.SelectedValue);
+
+                aluno.idTurma = turma;
+
+                new AlunoController().Incluir(aluno);
+
+                Response.Redirect("Alunos.aspx");
+
+            }
+            catch (ConsistenciaException ex)
+            {
+                ExibirMensagemAlert(ex.Mensagem);
+            }
+        }
+
+        public void Alterar()
+        {
+
+            try
+            {
+
+                Aluno aluno = new Aluno();
+                Turma turma = new Turma();
+
+                aluno.idAluno = int.Parse(txtAluno.Text);
+                aluno.Nome = txtNomeAluno.Text;
+                aluno.Matricula = int.Parse(txtMatricula.Text);
+
+                turma.idTurma = int.Parse(dropDownTurmas.SelectedValue);
+
+                aluno.idTurma = turma;
+
+                new AlunoController().Atualizar(aluno);
+
+                Response.Redirect("Alunos.aspx");
+
+            }
+            catch (ConsistenciaException ex)
+            {
+                ExibirMensagemAlert(ex.Mensagem);
+            }
+
+        }
+
+        private void ExibirMensagemAlert(string mensagem)
+        {
+            throw new NotImplementedException();
         }
     }
 }

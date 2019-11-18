@@ -30,7 +30,7 @@ namespace View.restrito
                         btnSalvar.Visible = true;
                         btnIncluir.Visible = false;
                         CarregarCombo();
-                        int id = int.Parse(listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text);
+                        txtAula.Text = listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[0].Text;
                         profNome.Text = listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[1].Text;
                         ListItem txt = dropDownTurmas.Items.FindByText(listaGridAulas.Rows[int.Parse(e.CommandArgument.ToString())].Cells[2].Text);
                         txt.Selected = true;
@@ -74,6 +74,7 @@ namespace View.restrito
 
         protected void btnModal_Click(object sender, EventArgs e)
         {
+            txtNome.Text = "";
             profNome.Text = professor.Nome;
             btnSalvar.Visible = false;
             btnIncluir.Visible = true;
@@ -127,10 +128,11 @@ namespace View.restrito
             try
             {
 
-                Aula aula = (Aula)ViewState["itemSel"];
+                Aula aula = new Aula();
 
                 Turma turma = new Turma();
 
+                aula.idAula = int.Parse(txtAula.Text);
                 aula.Nome = txtNome.Text;
                 aula.idProfessor = professor;
 

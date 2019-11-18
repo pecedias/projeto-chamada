@@ -40,7 +40,7 @@ namespace Controller
             }
 
             MySqlCommand cmd = new MySqlCommand(@"update turma
-                 set Nome = @Nome,
+                 set Nome = @Nome
                where idTurma = @idTurma
              ");
 

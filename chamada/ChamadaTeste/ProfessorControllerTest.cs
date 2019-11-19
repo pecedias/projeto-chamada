@@ -16,7 +16,7 @@ namespace Tests
 
         }
 
-        [Test]
+        [TestMethod]
         public void Logar()
         {
             // ================ CENTARIO ===================== //
@@ -41,7 +41,7 @@ namespace Tests
 
         }
 
-        [Test]
+        [TestMethod]
         public void Listar()
         {
             // ================ CENTARIO ===================== //
@@ -56,6 +56,28 @@ namespace Tests
             // ================ VALIDAÇÃO ===================== //
             //verificacao
             Assert.IsNotEmpty(logado);
+
+        }
+
+        [TestMethod]
+        public void ListarById()
+        {
+            // ================ CENTARIO ===================== //
+            ProfessorController pc = new ProfessorController();
+            Professor pf = Professor() {
+                idProfessor = 1;
+            }
+
+            // ================ AÇÃO ===================== //
+
+            //chama metodo de logar
+            List<Professor> logado = pc.Listar(pf.idProfessor);
+
+
+            // ================ VALIDAÇÃO ===================== //
+            //verificacao
+            Assert.IsNotEmpty(logado);
+            Assert.AreEqual(logado.idProfessor, pf.idProfessor);
 
         }
 

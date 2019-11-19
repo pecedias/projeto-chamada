@@ -88,12 +88,52 @@ namespace Tests
 
             // ================ AÇÃO ===================== //
 
-            List<Turma> alunos = t.Listar(new Turma());
+            List<Turma> turmas = t.Listar(new Turma());
 
             // ================ VALIDAÇÃO ===================== //
             //verificacao
-            Assert.IsNotEmpty(alunos);
-            Assert.AreNotEqual(0, alunos.Count);
+            Assert.IsNotEmpty(turmas);
+            Assert.AreNotEqual(0, turmas.Count);
+        }
+
+        [Test]
+        public void ListarById()
+        {
+            // ================ CENTARIO ===================== //
+            //pega uma turma
+            TurmaController t = new TurmaController();
+            Turma t1 = Turma() {
+                idTurma = 1;
+            }
+
+            // ================ AÇÃO ===================== //
+
+            List<Turma> turmas = t.Listar(t1.idTurma);
+
+            // ================ VALIDAÇÃO ===================== //
+            //verificacao
+            Assert.IsNotEmpty(turmas);
+            Assert.AreEqual(turmas.idTurma, t1.idTurma);
+        }
+
+        [Test]
+        public void ListarByName()
+        {
+            // ================ CENTARIO ===================== //
+            //pega uma turma
+            TurmaController t = new TurmaController();
+            Turma t1 = Turma() {
+                nome = "Ads";
+            }
+
+            // ================ AÇÃO ===================== //
+
+            List<Turma> turmas = t.ListarByName(t1.nome);
+
+            // ================ VALIDAÇÃO ===================== //
+            //verificacao
+            Assert.IsNotEmpty(turmas);
+            Assert.AreEqual(turmas.nome, t1.nome);
         }
 
     }

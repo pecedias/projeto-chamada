@@ -111,5 +111,45 @@ namespace Tests
             Assert.AreNotEqual(0, alunos.Count);
         }
 
+        [Test]
+        public void ListarById()
+        {
+            // ================ CENTARIO ===================== //
+            //pega uma turma
+            AlunoController t = new AlunoController();
+            Aluno a = Aluno() {
+                idAluno = 1;
+            }
+
+            // ================ A플O ===================== //
+
+            List<Aluno> alunos = t.ListarById(a.idAluno);
+
+            // ================ VALIDA플O ===================== //
+            //verificacao
+            Assert.IsNotEmpty(alunos);
+            Assert.AreEqual(alunos.idAluno, a.idAluno);
+        }
+
+        [Test]
+        public void ListarByMatricula()
+        {
+            // ================ CENTARIO ===================== //
+            //pega uma turma
+            AlunoController t = new AlunoController();
+            Aluno a = Aluno() {
+                Matricula = 123;
+            }
+
+            // ================ A플O ===================== //
+
+            List<Aluno> alunos = t.ListarByMatricula(a.Matricula);
+
+            // ================ VALIDA플O ===================== //
+            //verificacao
+            Assert.IsNotEmpty(alunos);
+            Assert.AreEqual(alunos.Matricula, a.Matricula);
+        }
+
     }
 }

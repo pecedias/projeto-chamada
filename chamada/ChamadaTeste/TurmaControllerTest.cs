@@ -113,7 +113,7 @@ namespace Tests
             // ================ VALIDAÇÃO ===================== //
             //verificacao
             Assert.IsNotEmpty(turmas);
-            Assert.AreEqual(turmas.idTurma, t1.idTurma);
+            Assert.AreEqual(turmas[0].idTurma, t1.idTurma);
         }
 
         [Test]
@@ -133,7 +133,7 @@ namespace Tests
             // ================ VALIDAÇÃO ===================== //
             //verificacao
             Assert.IsNotEmpty(turmas);
-            Assert.AreEqual(turmas.nome, t1.nome);
+            Assert.AreEqual(turmas[0].nome, t1.nome);
         }
 
     }

@@ -128,7 +128,7 @@ namespace Tests
             // ================ VALIDAÇÃO ===================== //
             //verificacao
             Assert.IsNotEmpty(alunos);
-            Assert.AreEqual(alunos.idAluno, a.idAluno);
+            Assert.AreEqual(alunos[0].idAluno, a.idAluno);
         }
 
         [Test]
@@ -148,7 +148,7 @@ namespace Tests
             // ================ VALIDAÇÃO ===================== //
             //verificacao
             Assert.IsNotEmpty(alunos);
-            Assert.AreEqual(alunos.Matricula, a.Matricula);
+            Assert.AreEqual(alunos[0].Matricula, a.Matricula);
         }
 
     }

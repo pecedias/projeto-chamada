@@ -132,7 +132,7 @@ namespace Tests
             // ================ VALIDAÇÃO ===================== //
             //verificacao
             Assert.IsNotEmpty(aulas);
-            Assert.AreEqual(aulas.idAula, a.idAula);
+            Assert.AreEqual(aulas[0].idAula, a.idAula);
         }
 
         [Test]
@@ -152,7 +152,7 @@ namespace Tests
             // ================ VALIDAÇÃO ===================== //
             //verificacao
             Assert.IsNotEmpty(aulas);
-            Assert.AreEqual(aulas.nome, a.nome);
+            Assert.AreEqual(aulas[0].nome, a.nome);
         }
 
     }

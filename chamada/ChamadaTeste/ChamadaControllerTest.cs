@@ -45,7 +45,7 @@ namespace Tests
             // ================ AÇÃO ===================== //
 
             //chama metodod incluir
-            List<Chamada> lista = pc.ListarPresenca(new Chamada());
+            List<Chamada> lista = pc.ListarFalta(new Chamada());
 
 
             // ================ VALIDAÇÃO ===================== //

@@ -71,13 +71,13 @@ namespace Tests
             // ================ AÇÃO ===================== //
 
             //chama metodo de logar
-            List<Professor> logado = pc.Listar(pf.idProfessor);
+            List<Professor> professor = pc.Listar(pf.idProfessor);
 
 
             // ================ VALIDAÇÃO ===================== //
             //verificacao
-            Assert.IsNotEmpty(logado);
-            Assert.AreEqual(logado.idProfessor, pf.idProfessor);
+            Assert.IsNotEmpty(professor);
+            Assert.AreEqual(professor[0].idProfessor, pf.idProfessor);
 
         }
 

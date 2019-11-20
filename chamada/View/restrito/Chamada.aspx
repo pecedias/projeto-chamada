@@ -84,7 +84,7 @@
                               </div>
                               <div class="modal-body">
                                 <p>idChamada: <asp:TextBox ID="txtEditIdChamada" runat="server" Enabled="false" MaxLength="120"></asp:TextBox></p>
-                                <p>idAluno: <asp:TextBox ID="txtEditIdAluno" runat="server" Enabled="false" MaxLength="120"></asp:TextBox></p>
+                                <p>idAluno: <asp:TextBox ID="txtEditIdAluno" runat="server" Enabled="false"  type="number" MaxLength="10"></asp:TextBox></p>
                                 <p>Presenca: <asp:DropDownList ID="dropDownPresenca" CssClass="btn btn-primary dropdown-toggle" runat="server"></asp:DropDownList></p>
                               </div>
                               <div class="modal-footer">

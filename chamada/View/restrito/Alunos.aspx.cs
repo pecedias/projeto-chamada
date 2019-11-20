@@ -86,12 +86,42 @@ namespace View.restrito
 
         protected void btnIncluir_Click(object sender, EventArgs e)
         {
-            Incluir();
+            if(!String.IsNullOrEmpty(txtNomeAluno.Text) && !String.IsNullOrEmpty(txtMatricula.Text))
+            {
+                if (txtMatricula.Text.Length <= 10)
+                {
+                    Incluir();
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>alert('A matricula deve conter apenas 10 numeros');</script>", false);
+                }
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>alert('Preencha Todos os Campos');</script>", false);
+            }
+           
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
-            Alterar();
+            if (!String.IsNullOrEmpty(txtNomeAluno.Text) && !String.IsNullOrEmpty(txtMatricula.Text))
+            {
+                if(txtMatricula.Text.Length <= 10)
+                {
+                    Alterar();
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>alert('A matricula deve conter apenas 10 numeros');</script>", false);
+                }
+
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>alert('Preencha Todos os Campos');</script>", false);
+            }
         }
 
         public void Incluir()

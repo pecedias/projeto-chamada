@@ -86,7 +86,7 @@
                               <div class="modal-body">
                                 <asp:TextBox ID="txtAluno" runat="server" MaxLength="120" Visible="false"></asp:TextBox>
                                 <p>Nome: <asp:TextBox ID="txtNomeAluno" runat="server" MaxLength="120"></asp:TextBox></p>
-                                <p>Matricula: <asp:TextBox ID="txtMatricula" runat="server" MaxLength="120"></asp:TextBox></p>
+                                <p>Matricula: <asp:TextBox ID="txtMatricula" runat="server" type="number" MaxLength="10"></asp:TextBox></p>
                                 <p>Turma: <asp:DropDownList ID="dropDownTurmas" CssClass="btn btn-primary dropdown-toggle" runat="server"></asp:DropDownList></p>
                               </div>
                               <div class="modal-footer">

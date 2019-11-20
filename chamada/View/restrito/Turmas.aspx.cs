@@ -52,7 +52,14 @@ namespace View.restrito
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
-            Alterar();
+            if (!String.IsNullOrEmpty(txtNomeTurma.Text) && !String.IsNullOrEmpty(txtTurma.Text))
+            {
+                Alterar();
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>alert('Preencha Todos os Campos');</script>", false);
+            }
 
         }
 
@@ -128,7 +135,14 @@ namespace View.restrito
 
         protected void btnIncluir_Click(object sender, EventArgs e)
         {
-            Incluir();
+            if (!String.IsNullOrEmpty(txtNomeTurma.Text) && !String.IsNullOrEmpty(txtTurma.Text))
+            {
+                Incluir();
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>alert('Preencha Todos os Campos');</script>", false);
+            }
         }
     }
 }

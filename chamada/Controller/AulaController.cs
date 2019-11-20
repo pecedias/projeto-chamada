@@ -196,9 +196,9 @@ namespace Controller
                         inner join professor
                         on professor.idProfessor = aula.idProfessor
                         inner join turma
-                        on turma.idTurma = aula.idTurma where aula.idAula = @Nome
+                        on turma.idTurma = aula.idTurma where aula.idAula = @idAula
             ");
-            cmd.Parameters.Add(new MySqlParameter("Nome", objEntrada.idAula));
+            cmd.Parameters.Add(new MySqlParameter("idAula", objEntrada.idAula));
             Conexao c = new Conexao();
 
             c.Abrir();

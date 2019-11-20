@@ -39,3 +39,9 @@ C:\Users\Usuario\Documents\projeto-chamada\chamada\Model\obj\Debug\Model.csprojA
 C:\Users\Usuario\Documents\projeto-chamada\chamada\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Documents\projeto-chamada\chamada\Model\obj\Debug\Model.dll
 C:\Users\Usuario\Documents\projeto-chamada\chamada\Model\obj\Debug\Model.pdb
+C:\Users\jhonn\OneDrive\Documentos\projeto-chamada\chamada\Model\bin\Debug\Model.dll
+C:\Users\jhonn\OneDrive\Documentos\projeto-chamada\chamada\Model\bin\Debug\Model.pdb
+C:\Users\jhonn\OneDrive\Documentos\projeto-chamada\chamada\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\jhonn\OneDrive\Documentos\projeto-chamada\chamada\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\jhonn\OneDrive\Documentos\projeto-chamada\chamada\Model\obj\Debug\Model.dll
+C:\Users\jhonn\OneDrive\Documentos\projeto-chamada\chamada\Model\obj\Debug\Model.pdb
